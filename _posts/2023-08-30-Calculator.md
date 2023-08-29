@@ -160,7 +160,7 @@ courses: { compsci: {week: 2} }
   });
 
   // A/C action
-  function clearCalc () { // clears calculator
+  function clearCalc () { // function used when the equals button is clicked; calculates equation and displays it
       firstNumber = null;
       output.innerHTML = "0";
       nextReady = true;
