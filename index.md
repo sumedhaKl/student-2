@@ -1,15 +1,18 @@
 ---
-layout: default
-title: Student Blog
+toc: true
+layout: post
+title: Sumedha's Blog: My science olympiad journey so far
+description: Blog about science olympiad
 ---
 
+## What is Science Olympiad?
+Science Olympiad is a competition between teams from different middle schools and high schools. It includes physical science, earth science, life science, chemistry, environmental science and forestry. Build events and study events are both included. 
 
-## Build you Home Page here 
-This is about your journey. Start now!!!
+## My Journey up to now
+I started Science Olympiad in seventh grade. However, I got eliminated from all of my events and didn't make the team. Next year, I tried harder and made the regional team. We went on to compete in the regional competition for Southern California. This was all during the pandemic and we had all the competitions online. During my freshman year, we had satellite competitions in which the competition was still held online, but we were physically doing the competition at the school site.
 
-## Overview of Hacks, Study and Tangibles
-Blogging in GitHub pages is a way to learn and code at the same time. 
+## My tenth grade year
+During my tenth grade year, however, we did Regionals physically. Del Norte came in second after several years!
 
-- Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
-- [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
-- Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
+## What it has taught me
+Participating in Science Olympiad has taught me how to work with others. I learned new stuff and how to work hard and plan. I feel overjoyed when I make the team and win a medal every year!! The medal makes it all worth it.
