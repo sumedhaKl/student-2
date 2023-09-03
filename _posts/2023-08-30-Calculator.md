@@ -52,6 +52,8 @@ courses: { compsci: {week: 2} }
       <div class="calculator-number">0</div>
       <div class="calculator-number">.</div>
       <div class="calculator-equals">=</div>
+      <!--row 5-->
+      <div class="calculator-operation">/</div>
   </div>
 </div>
 
@@ -127,7 +129,7 @@ courses: { compsci: {week: 2} }
               result = first - second;
               break;
           case "*":
-              result = first * second;
+              result = second * second;
               break;
           case "/":
               result = first / second;
@@ -160,7 +162,7 @@ courses: { compsci: {week: 2} }
   });
 
   // A/C action
-  function clearCalc () { // function used when the equals button is clicked; calculates equation and displays it
+  function clearCalc () { // clears calculator
       firstNumber = null;
       output.innerHTML = "0";
       nextReady = true;
