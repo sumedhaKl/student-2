@@ -5,8 +5,6 @@ title: Sumedha's Blog: My science olympiad journey so far
 description: Blog about science olympiad
 ---
 
-AP CSP Image
-
 ![Alt text] [GitHub Logo](https://github.com/username/repo/images/image.jpg)
 
 ## What is Science Olympiad?
