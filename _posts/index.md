@@ -21,4 +21,4 @@ Participating in Science Olympiad has taught me how to work with others. I learn
 
 I also created a ChatGPT button below which can be used to find out more details about Science Olympiad.
 
-[![Chat with ChatGPT](https://img.shields.io/badge/Chat%20with-ChatGPT-teal-green)](https://chat.openai.com)
+[![Chat with ChatGPT](https://img.shields.io/badge/Chat%20with-ChatGPT-teal)](https://chat.openai.com)
