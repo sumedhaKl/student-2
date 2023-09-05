@@ -5,7 +5,7 @@ title: Sumedha's Blog: My science olympiad journey so far
 description: Blog about science olympiad
 ---
 
-![GitHub Logo](https://github.com/username/repo/images/image.jpg)
+![AP CSP Image] (https://github.com/sumedhaKl/img/blob/main/AP%20CSP%20Image.png)
 
 ## What is Science Olympiad?
 Science Olympiad is a competition between teams from different middle schools and high schools. It includes physical science, earth science, life science, chemistry, environmental science and forestry. Build events and study events are both included. 
