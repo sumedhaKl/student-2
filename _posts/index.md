@@ -5,7 +5,7 @@ title: Sumedha's Blog: My science olympiad journey so far
 description: Blog about science olympiad
 ---
 
-![AP CSP Image](<_posts/AP CSP Image.png>)
+AP CSP Image![Alt text](<AP CSP Image-1.png>)
 
 ## What is Science Olympiad?
 Science Olympiad is a competition between teams from different middle schools and high schools. It includes physical science, earth science, life science, chemistry, environmental science and forestry. Build events and study events are both included. 
@@ -18,7 +18,3 @@ During my tenth grade year, however, we did Regionals physically. Del Norte came
 
 ## What it has taught me
 Participating in Science Olympiad has taught me how to work with others. I learned new stuff and how to work hard and plan. I feel overjoyed when I make the team and win a medal every year!! The medal makes it all worth it.
-
-I also created a ChatGPT button below which can be used to find out more details about Science Olympiad.
-
-[![Chat with ChatGPT](https://img.shields.io/badge/Chat%20with-ChatGPT-teal)](https://chat.openai.com)
