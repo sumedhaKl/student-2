@@ -7,7 +7,7 @@ description: Blog about science olympiad
 
 AP CSP Image
 
-![Alt text](<AP CSP Image-1.png>)
+![Alt text] [GitHub Logo](https://github.com/username/repo/images/image.jpg)
 
 ## What is Science Olympiad?
 Science Olympiad is a competition between teams from different middle schools and high schools. It includes physical science, earth science, life science, chemistry, environmental science and forestry. Build events and study events are both included. 
