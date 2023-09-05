@@ -1,3 +1,8 @@
+from emoji import emojize 
+print(emojize(":thumbs_up: Python is awesome! :grinning_face:"))
+print(emojize(":snake: I love Python! :clapping_hands:"))
+
+
 import sys
 from typing import Union
 

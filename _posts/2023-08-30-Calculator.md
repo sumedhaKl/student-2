@@ -54,7 +54,6 @@ courses: { compsci: {week: 2} }
       <div class="calculator-equals">=</div>
       <!--row 5-->
       <div class="calculator-operation">/</div>
-  </div>
 </div>
 
 <!-- JavaScript (JS) implementation of the calculator. -->
