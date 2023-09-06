@@ -19,4 +19,4 @@ During my tenth grade year, however, we did Regionals physically. Del Norte came
 ## What it has taught me
 Participating in Science Olympiad has taught me how to work with others. I learned new stuff and how to work hard and plan. I feel overjoyed when I make the team and win a medal every year!! The medal makes it all worth it.
 
-[![Go to the Science Olympiad site](C:\ScienceOlympiadLogo.png)](https://www.soinc.org/)
+[![Go to the Science Olympiad site](C:\Users\venka\Downloads\ScienceOlympiadLogo.png)](https://www.soinc.org/)
