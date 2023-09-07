@@ -1,5 +1,5 @@
 ---
-toc: false
+toc: true
 comments: false
 layout: post
 title: ChatGPT button
