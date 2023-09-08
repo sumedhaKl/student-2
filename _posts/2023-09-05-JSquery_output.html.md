@@ -1,6 +1,6 @@
 ---
 toc: false
-comments: true
+comments: false
 layout: post
 title: html table
 description: html table
