@@ -1,5 +1,13 @@
-html table
-%%html
+---
+toc: false
+comments: true
+layout: post
+title: html table
+description: html table
+type: plans
+courses: { compsci: {week: 3} }
+---
+
 <table class="table">
     <thead>
         <tr>
