@@ -1,16 +1,18 @@
 ---
 toc: true
-comments: true
+comments: false
 layout: post
-title: Sample Review Ticket
-description: Example Review Ticket!!! This will help us communicate results.
+title: Review Ticket
+description: My review ticket of what I have done so far for my blog.
 type: tangibles
 courses: { compsci: {week: 1} }
 ---
 
 ### Summary of Accomplishments
 > Update Blog to contain all hacks.  
+-I have been adding hacks to my blog posts and have edited them in Vscode.
 - Reviewed with Pair.  Discuss/Show evidence.
+
 - Discuss laptop, cloud computer.
 - Discuss tools setup and troubles.
 - Show personal blog / home page.

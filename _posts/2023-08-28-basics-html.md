@@ -220,6 +220,30 @@
     "- https://www.w3schools.com/html/default.asp\n",
     "- I will show a demo of how to find information on this website"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# HTML Hacks\n",
+    "Below is a wireframe for an HTML element you will create. A wireframe is a rough visual representation of HTML elements on a page and isn’t necessarily to scale or have the exact styling that the final HTML will have. Using the syntax above, try to create an HTML snippet that corresponds to the below wireframe.\n",
+    "The “a tags” can contain any links that you want\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "vscode": {
+     "languageId": "html"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "%%html\n",
+    "\n",
+    "<!-- put your HTML code in this cell, Make sure to press the Run button to see your"
+   ]
   }
  ],
  "metadata": {
@@ -245,3 +269,6 @@
  "nbformat": 4,
  "nbformat_minor": 2
 }
+wireframe for html hacks
+%%html
+
