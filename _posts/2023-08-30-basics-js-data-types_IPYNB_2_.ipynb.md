@@ -1,4 +1,5 @@
 ---
+toc: true
 comments: true
 title: Javascript Data Types/Lists
 hide: True
