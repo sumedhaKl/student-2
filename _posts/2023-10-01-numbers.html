@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>numbers</title>
+    <script>
+    var numbers = []
+var newNumbers = []
+var i = 0
+
+while (i < 100) {
+    numbers.push(i)
+    i += 1
+}
+for (var i of numbers) {
+    if (numbers[i] % 5 === 0)
+        newNumbers.push(numbers[i])
+    if (numbers[i] % 2 === 0)
+        newNumbers.push(numbers[i])
+else if (numbers[i] % (2 && 5) === 0)
+        continue;
+}
+</script>
+</head>
+</html>
