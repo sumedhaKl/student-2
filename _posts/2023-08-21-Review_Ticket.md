@@ -9,7 +9,7 @@ courses: { compsci: {week: 1} }
 ---
 
 ### Summary of Accomplishments
-> Update Blog to contain all hacks.  
+> Update Blog to contain all hacks. 
 -I have been adding hacks to my blog posts and have edited them in Vscode.
 - Reviewed with Pair.  Discuss/Show evidence.
 - Discuss laptop, cloud computer.
