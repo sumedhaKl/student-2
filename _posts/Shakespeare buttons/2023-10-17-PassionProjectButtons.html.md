@@ -2,6 +2,29 @@
 <html>
 <head>
     <title>Shakespearean Text Printer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            color: #009688;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            background-color: #009688;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #007366;
+        }
+    </style>
 </head>
 <body>
     <h1>Shakespearean Text</h1>
