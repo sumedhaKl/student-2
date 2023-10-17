@@ -8,6 +8,13 @@ const shakespeareanTexts = [
     "The lady doth protest too much, methinks.",
     "To thine own self be true, and it must follow, as the night the day, thou canst not then be false to any man.",
     "This above all: to thine own self be true.",
+    "Frailty, thy name is woman!",
+    "If music be the food of love, play on.",
+    "All that glisters is not gold.",
+    "Though she be but little, she is fierce.",
+    "The course of true love never did run smooth.",
+    "To sleep, perchance to dream.",
+    "Parting is such sweet sorrow."
     // Add more Shakespearean texts here
 ];
 
