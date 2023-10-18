@@ -26,6 +26,16 @@
         }
     </style>
 </head>
+<script>
+    function printShakespeare() {
+    const shakespeareTextElement = document.getElementById("shakespeareText");
+    const randomIndex = Math.floor(Math.random() * shakespeareanTexts.length);
+    const randomText = shakespeareanTexts[randomIndex];
+    shakespeareTextElement.textContent = randomText;
+}
+
+document.getElementById("printButton").addEventListener("click", printShakespeare);
+</script>
 <body>
     <h1>Shakespearean Text</h1>
     <p id="shakespeareText">Click the button to display Shakespearean text here.</p>
