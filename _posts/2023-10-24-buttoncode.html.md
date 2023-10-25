@@ -12,7 +12,7 @@
             color: blue;
         }
         p {
-            font-size: 18px;
+            font-size: 23px;
         }
         button {
             background-color: blue;
