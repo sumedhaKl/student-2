@@ -22,6 +22,5 @@ This is the repo that we are using for the Frontend of our API.
 
 5. [GitHub Pages History/Time Box](https://jm1021.github.io/alienWorld/compsci/).  Managing meetings and capturing history tell a big story for a team.  Time Boxing history is a great way to share key elements of project.
 
-6. [Anatomy of Amazon Book Catalog](https://github.com/AdityaSamavedam/FinalFrontend).  This contains key thinking that went into designing code.  This was build in same document as Project Plan.
-
+6. [Anatomy of Amazon Book Catalog](https://github.com/AdityaSamavedam/FinalFrontend).  This shows all the code that was made to make the Catalog. 
 7. Code Comments.  Almost everyone, including Teachers, do not remember how code works without comments.  Be sure to comment key code block and algorithms.
