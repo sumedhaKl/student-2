@@ -1,4 +1,7 @@
 ---
+toc: true
+comments: true
+layout: post
 title: Project Documentation - Amazon Book Catalog
 description: A catalog dedicated to extending text of books on Amazon and finding their details.
 courses: csp: {week: 10} 
