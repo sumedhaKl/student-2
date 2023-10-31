@@ -12,7 +12,7 @@ courses: {compsci: {week: 10} }
 These are our many key parts to managing and finishing our project.
 
 1. [README.md](https://github.com/AdityaSamavedam/FinalFrontend/blob/main/README.md). 
-This is the repo that we are using for the Frontend of our API. 
+This is the repo that we are using for the Frontend of our API.
 
 2. [Project Plan](https://github.com/AdityaSamavedam/FinalFrontend). This is the link for our project plan. We started off with a language model able to speak Shakespeare. But it didn't seem to give the users a purpose so we then switched to a text extender which extends text from books on an Amazon Book Catalog we made. It also gives us the main story of the book which helps users know whether they want to get this book from Amazon or not.
 
@@ -20,18 +20,7 @@ This is the repo that we are using for the Frontend of our API.
 
 4. [GitHub Pages Blog](https://jm1021.github.io/alienWorld/blogs/).  A big advantage of GitHub Pages as a frontend is that allows for classic frontend runtime and blogging to be contained in one place.  In education, a huge part of our project is how it was made, and how we collaborated, and how we progressed through steps.
 
-5. [GitHub Pages History/Time Box](https://jm1021.github.io/alienWorld/compsci/). 
- ## October 4: 
- We talked about what we will do for the Passion Project. We brainstormed ideas about team selection and which person will work on what.
- ## October 7-8:
- We started work on the Passion Project. Initially, we decided to make a website about a Shakespeare AI language model and created a video showing our ideas.
- ## October 9:
- Our team presented the Passion Project to Mr. Mortenson. Based on his feedback, we realized that this idea did not provide a benefit to the user and we will have to change it.
- ## October 9-12:
- We worked on creating our iteration lesson and adding homework codes and hacks.
- ## October 16th:
- We changed our Passion Project to a text extender called the Amazon Book Catalog. This would help users easily find books on Amazon and with just a few lines of text from a book, get summaries of books to see if they should spend time and money on buying and reading the book.
- 
+5. [GitHub Pages History/Time Box](https://jm1021.github.io/alienWorld/compsci/).  Managing meetings and capturing history tell a big story for a team.  Time Boxing history is a great way to share key elements of project.
 
 6. [Anatomy of Amazon Book Catalog](https://github.com/AdityaSamavedam/FinalFrontend).  This shows all the code that was made to make the Catalog. 
 7. Code Comments.  Almost everyone, including Teachers, do not remember how code works without comments.  Be sure to comment key code block and algorithms.
