@@ -1,5 +1,20 @@
 p{
-
     color: red;
+}
 
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.text {
+    color: green;
+}
+
+#catalog {
+    width: 300px;
+    height: auto;
 }
