@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Homework problems Data Abstractions
 type: hacks
-courses: { csp: {week: 7} }
+courses: { compsci: {week: 6} }
 ---
 
 ### Introduction
