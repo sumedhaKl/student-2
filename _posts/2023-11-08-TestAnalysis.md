@@ -14,4 +14,7 @@ Question:
 Explanation: Second can now be assigned to temp because the values were switched earlier when second was added to first. 
 
 9. Correct answer: D
-Explanation:
+Explanation: When code segments are incremented, programmers are able to look through them and find errors.
+
+14. Correct answer: C
+Explanation: Both programs display ten values, but they are different for each program.  
