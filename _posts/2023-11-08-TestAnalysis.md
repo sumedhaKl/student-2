@@ -13,5 +13,5 @@ Question:
 1. Correct answer: B
 Explanation: Second can now be assigned to temp because the values were switched earlier when second was added to first. 
 
-9. Correct answer: 
+9. Correct answer: D
 Explanation: 
