@@ -24,6 +24,7 @@ Jekyll Table Reference: https://idratherbewriting.com/documentation-theme-jekyll
 --->
 
 <assign BITS = 8>
+
 </assign>
 
 <style>
