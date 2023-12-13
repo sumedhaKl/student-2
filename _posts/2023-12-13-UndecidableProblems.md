@@ -62,6 +62,8 @@ The Entscheidigungsproblem refers to David Hilbert's problem of finding an algor
 ## POPCORN HACK, Create your own undecidable problem
 Create a problem that is unsolvable by any single algorithm; for example, this problem could have infinite possibilities.
 
+Put numbers into an algorithm and consistently divide it by three.
+
 ### Example 
 #### The "Infinite Sum Sequence Problem (ISSP)"
 Problem Statement: Given an infinite sequence of positive integers, can it be determined whether there exists a subsequence that sums up to a specific target value?
