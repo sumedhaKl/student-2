@@ -16,6 +16,7 @@
         print("n is not a multiple of three")
     ```
     There is a clear algorithm determining if a number is a multiple of three that works for every case.
+
 - **Undecidable problem:**
     ```python
     Halting problem
@@ -43,7 +44,7 @@ The Word Problem for Groups asks whether, given a group presentation and two wor
 
 ### Busy Beaver Problem
 The Busy Beaver Problem involves finding the Turing machine with the most significant number of steps executed before halting among all machines with a certain number of states. Due to the vast number of possible configurations and the infinite potential for different Turing machines, determining the Busy Beaver function for a given number of states remains undecidable.
-
+4
 ### Collatz Conjecture
 The Collatz Conjecture follows an iterative sequence for positive integers: if the number is even, divide it by 2; if it's odd, triple it and add 1. The conjecture posits that regardless of the starting number, this sequence always reaches 1. Despite extensive computational verifications, a proof for all integers remains undetermined.
 
@@ -62,7 +63,9 @@ The Entscheidigungsproblem refers to David Hilbert's problem of finding an algor
 ## POPCORN HACK, Create your own undecidable problem
 Create a problem that is unsolvable by any single algorithm; for example, this problem could have infinite possibilities.
 
-Put numbers into an algorithm and consistently divide it by three.
+Put multiples of three into an algorithm and consistently divide each number by three.
+
+Undecidability: This problem is undecidable because of it consistently dividing each number by three, which will never end (3/3 = 1, 1/3 = .33, .33/3 = 0.111, 0.111/3 = 0.037...).
 
 ### Example 
 #### The "Infinite Sum Sequence Problem (ISSP)"
@@ -80,7 +83,8 @@ A) It involves matching strings using regular expressions.
 
 B) It deals with finding the shortest path in a graph.
 
-C) PCP revolves around identifying whether a set of strings can be matched in a specific sequence.
+--> C) PCP revolves around identifying whether a set of strings can be matched in a specific sequence.
+Explanation: This is similar to the Halting Problem where it is unclear when the sequence will end.
 
 D) It's related to optimizing sorting algorithms.
 
@@ -91,7 +95,8 @@ A) The Tiling Problem refers to arranging tiles in a specific pattern which can 
 
 B) There exists an algorithm that can determine if a given shape can be tiled with a specific set of smaller shapes.
 
-C) It's impossible to ascertain if an arbitrary shape can be tiled using a finite set of smaller shapes.
+--> C) It's impossible to ascertain if an arbitrary shape can be tiled using a finite set of smaller shapes.
+Explanation: This problem is undecidable because there are infinite possibilities for how tiles can be arranged to make the main shape and we are only provided a finite set of shapes which only has finite possibilities to make the main shape.
 
 D) Tiling Problems can only be solved for regular polygons.
 
@@ -100,7 +105,8 @@ What is the core issue represented by the Word Problem for Groups?
 
 A) It focuses on finding the most efficient algorithm for text processing in groups.
 
-B) This problem pertains to determining if two words representing group elements are equivalent.
+--> B) This problem pertains to determining if two words representing group elements are equivalent.
+Explanation: This problem is undecidable because an infinite number of words can be part of the same group element.
 
 C) The Word Problem for Groups refers to solving crossword puzzles collaboratively.
 
@@ -113,7 +119,8 @@ A) It deals with optimizing the performance of multitasking systems.
 
 B) Busy Beaver Problem revolves around finding the most efficient algorithm to sort a list of numbers.
 
-C) It's about determining the longest-running and most productive Turing machine.
+--> C) It's about determining the longest-running and most productive Turing machine.
+Explanation: Turing Machines have inifinite potential for being productive and there is a equally large number of ways these machines could be put together, or configured. It is unsolvable because it is looking for a finite solution out of infinite possibilities.
 
 D) Busy Beaver Problem is concerned with scheduling tasks in a time-efficient manner.
 
