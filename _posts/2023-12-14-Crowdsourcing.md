@@ -1,6 +1,6 @@
 ---
 toc: true
-comments: false
+comments: true
 layout: post
 title: Crowdsourcing
 description: This is the team teach for crowdsourcing.
@@ -31,7 +31,7 @@ Explain how people participate in problem-solving processes at scale. </font>
 
 <font color="00A36C"> Q: Name another example of a project or company that could use crowdsourcing, and why. The example can be hypothetical or an already existing project/company.</font>
 
-Enter your answer here:
+Enter your answer here: Advertising; it could use crowdsourcing through market surveys to figure out a need for a  new product based on all the ways it can be used and how willing people are to pay for it.
 
 # Public Data Sets
 
@@ -74,7 +74,7 @@ Enter your answer here:
 
 ## <font color="#00A36C"> Popcorn Hack 2
 Q: Based on the examples provided above, what other heavy tasks can distributed computing be used for? Write your answer in the space provided.</font><br><br>
-Enter your answer here:
+Enter your answer here: Distributed computing can be used for predicting natural disasters (ex. Earthquakes, tsunamis, hurricanes). People living in different parts of the world can use multiple computers to achieve this. This will help alert people living in areas affected by theses disasters if they should leave earlier or not.
 
 # Innovations made possible with crowdsourcing
 
