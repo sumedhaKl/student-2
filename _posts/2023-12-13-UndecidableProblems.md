@@ -131,7 +131,8 @@ A) It's a conjecture related to the distribution of prime numbers.
 
 B) The conjecture revolves around finding the optimal path in a graph.
 
-C) Collatz Conjecture deals with iterating over integers using a specific sequence until reaching the value 1.
+--> C) Collatz Conjecture deals with iterating over integers using a specific sequence until reaching the value 1.
+Explanation: There is an infinite number of integers so it is very unlikely to test all the integers in order to reach the end value 1.
 
 D) It's a hypothesis about the behavior of sorting algorithms.
 
@@ -142,7 +143,8 @@ A) Traveling Salesman Problem.
 
 B) Knapsack Problem.
 
-C) Post's Correspondence Problem.
+--> C) Post's Correspondence Problem.
+Explanation: The problem is about matching strings so that the concatenations are unique when the strings are linked together.
 
 D) Dijkstra's Shortest Path Problem.
 
@@ -151,7 +153,8 @@ What does Rice's Theorem state?
 
 A) It claims that all programming languages are Turing-complete.
 
-B) Rice's Theorem affirms that any non-trivial property about the behavior of programs is undecidable.
+--> B) Rice's Theorem affirms that any non-trivial property about the behavior of programs is undecidable.
+Explanation: A non trivial property is neither true nor false for every program. A computer cannot be made that defines these properties because computers only work on boolean logic which is only true or false.
 
 C) It asserts that all recursive functions can be computed using a Turing machine.
 
@@ -160,7 +163,8 @@ D) Rice's Theorem describes the limitations of parallel computing.
 ### Emptiness Problem for Turing Machines
 What does the Emptiness Problem for Turing Machines aim to determine?
 
-A) It checks whether a Turing machine can recognize an empty language.
+--> A) It checks whether a Turing machine can recognize an empty language.
+Explanation: The Emptiness Problem aims to determine if a Turing Machine recognizes all the strings in a language. It is undecidable because Turing machine cannot halt on all inputs because inputs are infinite. 
 
 B) This problem is concerned with finding the smallest Turing machine.
 
@@ -175,7 +179,8 @@ A) P vs NP Problem.
 
 B) Riemann Hypothesis.
 
-C) The Entscheidigungsproblem.
+--> C) The Entscheidigungsproblem.
+Explanation: This was a challenge from David Hilbert that contains an algorithm that can answer every mathematical problem. This is undecidable because computers will give a yes/no answer after solving each input and there are infinite inputs.
 
 D) Goldbach's Conjecture.
 
