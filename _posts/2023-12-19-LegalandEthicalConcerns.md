@@ -45,7 +45,7 @@ Open Access
 ## <font color = "FFC0C9"> Popcorn Hack 1 </font> 
 
 - Give an example of an open-source software and explain why it is an open source.
-Github? Tensorflow
+Github; it allows people to code and fork repositories without asking for permission. People can also collaborate and share what they have coded with the whole team.
 
 ## Legal/Ethical Concerns
 
@@ -62,18 +62,27 @@ The digital divide is the unequal distribution of access to technology Although 
 ## <font color = "FFC0C9"> Popcorn Hack 2 </font> 
 
 - What is another legal or ethical concern regarding intellectual property in technology?
-Piracy/Pirating, Deep fakes, Identity theft?
+Piracy/Pirating; People are unable to make money from their creative projects that they worked hard on because their work was stolen. Specifically, something they made using their creativity was advertised as a 'free' thing and someone else made money from that.
 
 ## <font color = "yellow"> Homework </font> 
 
 Complete these five free response questions and send them to Taj on Slack by December 21, 11:59 pm. You will be graded on how much effort you put into your answer. 
 
 1. What is the difference between open source and open access? 
+Open source allows people to modify the work of others without copyright restrictions. So, there will be more collaboration between people, while open access is a way of sharing scientific research. It involves online research journals and articles that provide people access to them. For example, Google Scholar allows researchers to look up whatever articles suit their research projects best. 
 
 2. What is the importance of copyright?
 
+Copyright is important because it is used to ensure that whatever you create stays yours. It allows you to choose what you can do with it and what people you want to be able to access it. It also keeps our IP protected in case someone wants to use our creations for plagiarism. 
+
 3. What is a way people can harm individuals or groups through open source data? 
+
+People can create viruses or turn open source data into fake sites that people could give their information on. This could lead to identity theft which could harm individuals or even groups if done on a large enough scale. This is a security concern because people could lose their individual data. Also, if you are in business, you could lose your business model and somebody can make money from your idea.
 
 4. What term describes the unequal distribution of access to technology? 
 
+The digital divide is the unequal distribution of access to technology. It prevents people from being able to have the same internet access to use the same databases or journals for reasearch due to people having a lack of technology or training and access to technological devices.
+
 5. How do you see intellectual property in 20 years (be creative)?
+
+I see intellectual property in 20 years as something mostly digital, where people create songs and programs on the Internet along with more development in AI. People could ruin others' songs by removing some of the lyrics/ quality of sound and selling them as their own because of open source technology. If there is plagiarism, copyrighted laws will be more severe. Every time a song is added to apps like Spotify, they could have their lyrics and quality of sound compared to other songs to check for plagiarism.
