@@ -67,36 +67,7 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
-
-function moveup() {
-    myGamePiece.speedY -= 1;
-}
-
-function movedown() {
-    myGamePiece.speedY += 1;
-}
-
-function moveleft() {
-    myGamePiece.speedX -= 1;
-}
-
-function moveright() {
-    myGamePiece.speedX += 1;
-}
-
-function jump() {
-	myGamePiece.speedY -= 5;
-}
-
 </script>
-<div style="text-align:center;width:480px;">
-    <button onclick="moveup()">UP</button><br><br>
-    <button onclick="moveleft()">LEFT</button> 
-    <button onclick="moveright()">RIGHT</button><br><br>
-    <button onclick="movedown()">DOWN</button>
-    <button onclick="jump()">JUMP</button>
-</div>
-
-<p>If you click a button the red square will start moving. This is my game!</p>
+<p>You can use the arrow keys to move the red square now. This is my game!</p>
 </body>
 </html>
