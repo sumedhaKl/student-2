@@ -14,9 +14,9 @@ canvas {
 var redGamePiece, yellowGamePiece, blueGamePiece;
 
 function startGame() {
-    redGamePiece = new component(30, 30, "red", 10, 10);
-    yellowGamePiece = new component(30, 30, "yellow", 50, 60);
-    blueGamePiece = new component(30, 30, "blue", 10, 110);
+    redGamePiece = new component(30, 30, "red", 10, 120);
+    yellowGamePiece = new component(30, 30, "yellow", 10, 120);
+    blueGamePiece = new component(30, 30, "blue", 10, 120);
     myGameArea.start();
 }
 
@@ -50,8 +50,8 @@ function component(width, height, color, x, y) {
 function updateGameArea() {
     myGameArea.clear();
     redGamePiece.x += 1;
-    redGamePiece.y += 1;
     yellowGamePiece.x += 1;
+    yellowGamePiece.y += 1;
     blueGamePiece.x += 1;
     blueGamePiece.y -= 1;
     redGamePiece.update();
