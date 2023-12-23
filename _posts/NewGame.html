@@ -23,16 +23,14 @@ var myGameArea = {
     start : function() {
         this.canvas.width = 750;
         this.canvas.height = 500;
+        this.canvas.style.cursor = "none"; //hide the original cursor
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', function (e) {
-            myGameArea.keys = (myGameArea.keys || []);
-            myGameArea.keys[e.keyCode] = true;
-        })
-        window.addEventListener('keyup', function (e) {
-            myGameArea.keys[e.keyCode] = false;
-        })
+        window.addEventListener('mousemove', function (e) {
+          myGameArea.x = e.pageX;
+          myGameArea.y = e.pageY;
+        })    
     },
     clear : function() {
         this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
@@ -59,16 +57,13 @@ function component(width, height, color, x, y) {
 
 function updateGameArea() {
     myGameArea.clear();
-    myGamePiece.speedX = 0;
-    myGamePiece.speedY = 0;
-    if (myGameArea.keys && myGameArea.keys == 37) {myGamePiece.speedX = -1; }
-    if (myGameArea.keys && myGameArea.keys == 39) {myGamePiece.speedX = 1; }
-    if (myGameArea.keys && myGameArea.keys == 38) {myGamePiece.speedY = -1; }
-    if (myGameArea.keys && myGameArea.keys == 40) {myGamePiece.speedY = 1; }
-    myGamePiece.newPos();
+    if (myGameArea.x && myGameArea.y) {
+      myGamePiece.x = myGameArea.x;
+      myGamePiece.y = myGameArea.y;  
+    }
     myGamePiece.update();
 }
 </script>
-<p>You can use the arrow keys to move the red square now. This is my game!</p>
+<p>Move the cursor inside the canvas to move the red square. This is my game!</p>
 </body>
 </html>
