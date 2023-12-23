@@ -18,6 +18,7 @@ var myScore;
 
 function startGame() {
     myGamePiece = new component(30, 30, "red", 10, 120);
+    mySound = new sound("bounce.mp3");
     myScore = new component("30px", "Consolas", "blue", 280, 40, "text");
     myGameArea.start();
 }
@@ -84,6 +85,7 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
+            mySound.play();
             myGameArea.stop();
             return;
         } 
