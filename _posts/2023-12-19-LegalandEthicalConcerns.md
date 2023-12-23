@@ -2,7 +2,7 @@
 toc: true
 comments: false
 layout: post
-title: Legal and Ethical Concerns
+title: Legal and Ethical Conce
 type: plans
 courses: { compsci: {week: 4} }
 ---
