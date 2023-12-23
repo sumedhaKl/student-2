@@ -11,10 +11,12 @@ canvas {
 <body onload="startGame()">
 <script>
 
-var myGamePiece;
+var redGamePiece, blueGamePiece, yellowGamePiece;
 
 function startGame() {
-    myGamePiece = new component(30, 30, "red", 10, 120);
+    redGamePiece = new component(30, 30, "red", 10, 120);
+    yellowGamePiece = new component(30, 30, "yellow", 10, 120);
+    blueGamePiece = new component(30, 30, "blue", 10, 120);
     myGameArea.start();
 }
 
@@ -46,12 +48,14 @@ function component(width, height, color, x, y) {
 }
 
 function updateGameArea() {
-    // myGameArea.clear();
-    myGamePiece.x += 1;
-    myGamePiece.update();
+    myGameArea.clear();
+    // redGamePiece.x += 1;
+    redGamePiece.update();
+    yellowGamePiece.update();
+    blueGamePiece.update();
 }
 
 </script>
-<p>The red square is actually being drawn 50 times per second. This is my game!</p>
+<p>Three components on one game area. This is my game!</p>
 </body>
 </html>
