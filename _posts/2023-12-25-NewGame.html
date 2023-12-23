@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width" initial-scale="1.0"/>
-    <style>
-        canvas {
-            border: 2px solid #4c0404;
-            background-color: #ffffff52;
-        }
-    </style>
+<meta name="viewport" content="width=device-width" initial-scale="1.0"/>
+<style>
+canvas {
+    border: 2px solid #4c0404;
+    background-color: #ffffff52;
+}
+</style>
 </head>
 <body onload="startGame()">
 <script>
@@ -14,8 +14,8 @@
 var myGamePiece;
 
 function startGame() {
-    myGameArea.start();
     myGamePiece = new component(30, 30, "red", 10, 120);
+    myGameArea.start();
 }
 
 var myGameArea = {
@@ -51,9 +51,6 @@ function updateGameArea() {
 }
 
 </script>
-
-<p>We have added a component to our game, a red square! This is my game!
-</p>
-
+<p>The red square is actually being drawn 50 times per second. This is my game!</p>
 </body>
 </html>
