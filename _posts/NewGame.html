@@ -49,6 +49,10 @@ function component(width, height, color, x, y) {
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+    this.newPos = function() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+    }
     this.crashWith = function(otherobj) {
         var myleft = this.x;
         var myright = this.x + (this.width);
@@ -74,9 +78,9 @@ function updateGameArea() {
         myGameArea.stop();
     } else {
         myGameArea.clear();
+        myObstacle.x -= 1;
         myObstacle.update();
-        myGamePiece.x += myGamePiece.speedX;
-        myGamePiece.y += myGamePiece.speedY;
+        myGamePiece.newPos();
         myGamePiece.update();
     }
 }
@@ -113,6 +117,6 @@ ontouchstart="moveright()">RIGHT</button><br><br>
     <button onmousedown="movedown()" onmouseup="clearmove()"
 ontouchstart="movedown()">DOWN</button>
 </div>
-<p>Try hitting the obstacle, and the game will stop. This is my game!</p>
+<p>Avoid hitting the obstacle, or else the game will stop. This is my game!</p>
 </body>
 </html>
