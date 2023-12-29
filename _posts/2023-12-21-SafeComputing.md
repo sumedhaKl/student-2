@@ -83,9 +83,9 @@ Bad:
 
 List at least three apps or websites that might use PII:
 
-- 1: 
-- 2: 
-- 3: 
+- 1: Amazon
+- 2: Hospitals
+- 3: College Board
 
 ## Authentication
 
@@ -147,10 +147,8 @@ A certificate authorities issue digital certificates that validate the ownership
 ### <font color = "Green">Popcorn Hack 2:</font>
 
 Create an encrypted code using symmetric encryption, and provide the code, and the actual message:
-ZYXWVUTSRQPONMLKJIHGFEDCBA
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-Code: Z XLNK
+Key: 5
+Code: F HTRUZYJW UWTLWAR
 Message: A COMPUTER PROGRAM
 
 ## Risk Factors
@@ -177,6 +175,8 @@ Message: A COMPUTER PROGRAM
 ### <font color = "Green">Popcorn Hack 3:</font>
 
 Go to a website that checks your password and make a strong password.
+
+Original password: hello (fake) New password: H3II0_#^ _ ^ (fake)
 
 ### Homework
 
