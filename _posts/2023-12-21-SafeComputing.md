@@ -184,18 +184,34 @@ Original password: hello (fake) New password: H3II0_#^ _ ^ (fake)
 
 What is Personal Identifiable Information (PII), and list three examples of it?
 
+PII is used to identify people using their personal information. Three examples of this are: name, address, and phone number.
+
 What is a possible risk or cons to using PII?
+
+If given on seemingly safe sites, PII can be used by hackers or makers of phishing scams to pose as the person the PII belongs to. PII can also be used to take money from users or expose personal information, such as medical information.
 
 What are traits of a strong password?
 
+A strong password is over 10 characters long and has upper and lowercase letters. It also includes numbers and special characters, like symbols.
+
 What does having a strong password prevent?
+
+Having a strong password prevents hackers from accessing others' PII. The password is now longer and with multiple characters, making it difficult to guess it as there are now multiple combinations of what it could be. 
 
 What are the two types of decryption and what is the difference between the two?
 
+The two types of decryption are symmetric and asymmetric encryption. Symmetric encrypction involves a coded message that anyone can access using the same key to encrypt and decrypt the message. However, in asymmetric encryption, two keys are used: one for the sender and one for the reciever. The sender's key is public and allows anyone to see the encrypted code while the reciever's key is private and allows only the reciever to decrypt the code and see the actual message. 
+
 What is phishing?
+
+Phishing is a way to get access to personal information by scamming the user with fake emails from trusted sites. These emails look like real emails from the actual sites but include fake links. Once these links are clicked, a virus might be installed on the user's computer, or a keylogger will be added. These links look like they are from the real site, but come from a mailbox and could possibly be misspelled. 
 
 What is a way a keylogger can get into your computer?
 
+A keylogger can get into your computer through phishing emails or by plugging in a physical device to your computer. The keylogger tracks the user's movements when they press keys in order to learn their passwords and hack into their private accounts. 
+
 What is a rogue access point and how is it used?
+
+A rogue access point are unauthorized access points into secure networks. It is used by connecting to a wireless network or hotspot. They are of two types: active and passive. Passive access involves knowing personal info but not manipulating it while active access involves actually changing personal info in order to get access to users' Internet searches.
 
 Due after winter break
