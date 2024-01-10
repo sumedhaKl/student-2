@@ -20,12 +20,12 @@
     
     <br>
     
-    <label for="personality">Select a personality:</label>
+    <label for="personality">Enter a personality:</label>
     <input type="text" id="personality" placeholder="e.g., Adventurous">
     
     <br>
     
-    <label for="setting">Select a setting:</label>
+    <label for="setting">Enter a setting:</label>
     <input type="text" id="setting" placeholder="e.g., Forest">
     
     <br>
@@ -41,13 +41,13 @@
             const enteredCharacter = document.getElementById("character").value;
             const enteredPersonality = document.getElementById("personality").value;
             const enteredSetting = document.getElementById("setting").value;
- 
+
             if (!enteredCharacter || !enteredPersonality || !enteredSetting) {
                 alert("Please enter values for all fields.");
                 return;
             }
             
-            const story = `${selectedCharacter} is a ${selectedPersonality} person who decides to explore the ${selectedSetting}.`;
+            const story = `${enteredCharacter} is a ${enteredPersonality} person who decides to explore the ${enteredSetting}.`;
 
             document.getElementById("story").innerHTML = story;
         }
