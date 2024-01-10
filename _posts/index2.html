@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Story Generator</h1>
+    
+    <label for="character">Select a character:</label>
+    <select id="character">
+        <option value="john">John</option>
+        <option value="mary">Mary</option>
+        <option value="alex">Alex</option>
+    </select>
+    
+    <br>
+    
+    <label for="personality">Select a personality:</label>
+    <select id="personality">
+        <option value="adventurous">Adventurous</option>
+        <option value="kind">Kind</option>
+        <option value="curious">Curious</option>
+    </select>
+    
+    <br>
+    
+    <label for="setting">Select a setting:</label>
+    <select id="setting">
+        <option value="forest">Forest</option>
+        <option value="city">City</option>
+        <option value="beach">Beach</option>
+    </select>
+    
+    <br>
+    
+    <button onclick="generateStory()">Generate Story</button>
+    
+    <br>
+    
+    <p id="story"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
