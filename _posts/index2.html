@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Story Generator</title>
+    <title>Choose Your Own Adventure</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,30 +13,15 @@
     </style>
 </head>
 <body>
-    <h1>Story Generator</h1>
-    
-    <label for="character">Enter a character:</label>
-    <input type="text" id="character" placeholder="e.g., Mary">
-    
-    <br>
-    
-    <label for="personality">Enter a personality:</label>
-    <input type="text" id="personality" placeholder="e.g., Adventurous">
-    
-    <br>
-    
-    <label for="setting">Enter a setting:</label>
-    <input type="text" id="setting" placeholder="e.g., Forest">
-    
-    <br>
-    
-    <button onclick="generateStory()">Generate Story</button>
-    
-    <br>
+    <h1>Choose Your Own Adventure</h1>
     
     <p id="story"></p>
+    <div id="choices"></div>
 
     <script>
+        let storyText = "";
+        let currentScene = "start";
+
         function generateStory() {
             const enteredCharacter = document.getElementById("character").value;
             const enteredPersonality = document.getElementById("personality").value;
@@ -46,10 +31,96 @@
                 alert("Please enter values for all fields.");
                 return;
             }
-            
-            const story = `${enteredCharacter} is a ${enteredPersonality} person who lives in the ${enteredSetting}.`;
 
-            document.getElementById("story").innerHTML = story;
+            // Clear previous story and choices
+            storyText = "";
+            document.getElementById("choices").innerHTML = "";
+
+            // Initial scene
+            if (currentScene === "start") {
+                storyText = `${enteredCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
+
+                // Display initial choices
+                displayChoices(["Explore the mysterious forest", "Visit the bustling city"]);
+            } else if (currentScene === "forest") {
+                storyText = `As ${enteredCharacter} ventures into the forest, they encounter a magical creature.`;
+
+                // Display choices for the forest scene
+                displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
+            } else if (currentScene === "city") {
+                storyText = `In the city, ${enteredCharacter} discovers a hidden alley with a mysterious door.`;
+
+                // Display choices for the city scene
+                displayChoices(["Enter the mysterious door", "Explore other parts of the city"]);
+            } else if (currentScene === "befriendCreature") {
+                storyText = `The creature turns out to be a friendly guide, leading ${enteredCharacter} to hidden wonders in the forest.`;
+
+                // End of the story
+                displayEnd();
+            } else if (currentScene === "deeperForest") {
+                storyText = `${enteredCharacter} ventures deeper into the forest and stumbles upon an ancient ruin.`;
+
+                // End of the story
+                displayEnd();
+            } else if (currentScene === "enterDoor") {
+                storyText = `${enteredCharacter} enters the mysterious door and finds themselves in a magical realm.`;
+
+                // End of the story
+                displayEnd();
+            } else if (currentScene === "exploreCity") {
+                storyText = `${enteredCharacter} explores various parts of the city, discovering its secrets.`;
+
+                // End of the story
+                displayEnd();
+            }
+
+            // Display the current story
+            document.getElementById("story").innerText = storyText;
+        }
+
+        function displayChoices(choices) {
+            // Display the available choices
+            for (let i = 0; i < choices.length; i++) {
+                const choiceBtn = document.createElement("button");
+                choiceBtn.innerText = choices[i];
+                choiceBtn.onclick = function () {
+                    handleChoice(choices[i]);
+                };
+                document.getElementById("choices").appendChild(choiceBtn);
+            }
+        }
+
+        function handleChoice(choice) {
+            // Update the current scene based on the player's choice
+            if (currentScene === "start") {
+                if (choice === "Explore the mysterious forest") {
+                    currentScene = "forest";
+                } else if (choice === "Visit the bustling city") {
+                    currentScene = "city";
+                }
+            } else if (currentScene === "forest") {
+                if (choice === "Befriend the creature") {
+                    currentScene = "befriendCreature";
+                } else if (choice === "Continue deeper into the forest") {
+                    currentScene = "deeperForest";
+                }
+            } else if (currentScene === "city") {
+                if (choice === "Enter the mysterious door") {
+                    currentScene = "enterDoor";
+                } else if (choice === "Explore other parts of the city") {
+                    currentScene = "exploreCity";
+                }
+            }
+
+            // Generate the story based on the new scene
+            generateStory();
+        }
+
+        function displayEnd() {
+            // Display the end of the story
+            const endMessage = document.createElement("p");
+            endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
+            document.getElementById("choices").appendChild(endMessage);
         }
     </script>
 </body>
