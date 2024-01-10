@@ -1,3 +1,5 @@
+document.getElementById("generateBtn").addEventListener("click", generateStory);
+
 function generateStory() {
     // Get selected values
     const selectedCharacter = document.getElementById("character").value;
@@ -10,8 +12,3 @@ function generateStory() {
     // Display the story
     document.getElementById("story").innerText = story;
 }
-
-window.onload = function () {
-
-    document.getElementById("generateBtn").addEventListener("click", generateStory);
-};
