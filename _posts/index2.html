@@ -32,54 +32,36 @@
                 return;
             }
 
-            // Clear previous story and choices
             storyText = "";
             document.getElementById("choices").innerHTML = "";
 
-            // Initial scene
             if (currentScene === "start") {
                 storyText = `${enteredCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
-
-                // Display initial choices
                 displayChoices(["Explore the mysterious forest", "Visit the bustling city"]);
             } else if (currentScene === "forest") {
                 storyText = `As ${enteredCharacter} ventures into the forest, they encounter a magical creature.`;
-
-                // Display choices for the forest scene
                 displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
             } else if (currentScene === "city") {
                 storyText = `In the city, ${enteredCharacter} discovers a hidden alley with a mysterious door.`;
-
-                // Display choices for the city scene
                 displayChoices(["Enter the mysterious door", "Explore other parts of the city"]);
             } else if (currentScene === "befriendCreature") {
                 storyText = `The creature turns out to be a friendly guide, leading ${enteredCharacter} to hidden wonders in the forest.`;
-
-                // End of the story
                 displayEnd();
             } else if (currentScene === "deeperForest") {
                 storyText = `${enteredCharacter} ventures deeper into the forest and stumbles upon an ancient ruin.`;
-
-                // End of the story
                 displayEnd();
             } else if (currentScene === "enterDoor") {
                 storyText = `${enteredCharacter} enters the mysterious door and finds themselves in a magical realm.`;
-
-                // End of the story
                 displayEnd();
             } else if (currentScene === "exploreCity") {
                 storyText = `${enteredCharacter} explores various parts of the city, discovering its secrets.`;
-
-                // End of the story
                 displayEnd();
             }
 
-            // Display the current story
             document.getElementById("story").innerText = storyText;
         }
 
         function displayChoices(choices) {
-            // Display the available choices
             for (let i = 0; i < choices.length; i++) {
                 const choiceBtn = document.createElement("button");
                 choiceBtn.innerText = choices[i];
@@ -91,7 +73,6 @@
         }
 
         function handleChoice(choice) {
-            // Update the current scene based on the player's choice
             if (currentScene === "start") {
                 if (choice === "Explore the mysterious forest") {
                     currentScene = "forest";
@@ -112,18 +93,15 @@
                 }
             }
 
-            // Generate the story based on the new scene
             generateStory();
         }
 
         function displayEnd() {
-            // Display the end of the story
             const endMessage = document.createElement("p");
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
             document.getElementById("choices").appendChild(endMessage);
         }
 
-        // Initial call to generate the story
         generateStory();
     </script>
 </body>
