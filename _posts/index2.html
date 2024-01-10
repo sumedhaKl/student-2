@@ -16,15 +16,19 @@
     <h1>Choose Your Own Adventure</h1>
 
     <label for="character">Enter a character's name:</label>
-    <input type="text" id="character" placeholder="e.g., Mary">
+    <input type="text" id="character" placeholder="e.g., Alice">
 
     <br>
 
     <label for="personality">Enter the character's personality:</label>
-    <input type="text" id="personality" placeholder="e.g., Adventurous">
+    <input type="text" id="personality" placeholder="e.g., Brave">
 
     <br>
-    
+
+    <button onclick="startAdventure()">Start Adventure</button>
+
+    <br>
+
     <p id="story"></p>
     <div id="choices"></div>
 
@@ -32,17 +36,25 @@
         let storyText = "";
         let currentScene = "start";
 
+        function startAdventure() {
+            const enteredCharacter = document.getElementById("character").value;
+            const enteredPersonality = document.getElementById("personality").value;
+
+            if (!enteredCharacter || !enteredPersonality) {
+                alert("Please enter values for both the character's name and personality.");
+                return;
+            }
+
+            currentScene = "start";
+            generateStory();
+        }
+
         function generateStory() {
             const enteredCharacter = document.getElementById("character").value;
             const enteredPersonality = document.getElementById("personality").value;
 
             storyText = "";
             document.getElementById("choices").innerHTML = "";
-
-            if (!enteredCharacter || !enteredPersonality) {
-                alert("Please enter values for both the character's name and personality.");
-                return;
-            }
 
             if (currentScene === "start") {
                 storyText = `${enteredCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
@@ -128,7 +140,8 @@
             document.getElementById("choices").appendChild(endMessage);
         }
 
-        generateStory();
+        // Commented out the initial call to generateStory() to wait for the "Start Adventure" button click
+        // generateStory();
     </script>
 </body>
 </html>
