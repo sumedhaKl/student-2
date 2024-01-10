@@ -15,30 +15,18 @@
 <body>
     <h1>Story Generator</h1>
     
-    <label for="character">Select a character:</label>
-    <select id="character">
-        <option value="john">John</option>
-        <option value="mary">Mary</option>
-        <option value="alex">Alex</option>
-    </select>
+    <label for="character">Enter a character:</label>
+    <input type="text" id="character" placeholder="e.g., Mary">
     
     <br>
     
     <label for="personality">Select a personality:</label>
-    <select id="personality">
-        <option value="adventurous">Adventurous</option>
-        <option value="kind">Kind</option>
-        <option value="curious">Curious</option>
-    </select>
+    <input type="text" id="personality" placeholder="e.g., Adventurous">
     
     <br>
     
     <label for="setting">Select a setting:</label>
-    <select id="setting">
-        <option value="forest">Forest</option>
-        <option value="city">City</option>
-        <option value="beach">Beach</option>
-    </select>
+    <input type="text" id="setting" placeholder="e.g., Forest">
     
     <br>
     
@@ -50,10 +38,15 @@
 
     <script>
         function generateStory() {
-            const selectedCharacter = document.getElementById("character").value;
-            const selectedPersonality = document.getElementById("personality").value;
-            const selectedSetting = document.getElementById("setting").value;
+            const enteredCharacter = document.getElementById("character").value;
+            const enteredPersonality = document.getElementById("personality").value;
+            const enteredSetting = document.getElementById("setting").value;
  
+            if (!enteredCharacter || !enteredPersonality || !enteredSetting) {
+                alert("Please enter values for all fields.");
+                return;
+            }
+            
             const story = `${selectedCharacter} is a ${selectedPersonality} person who decides to explore the ${selectedSetting}.`;
 
             document.getElementById("story").innerHTML = story;
