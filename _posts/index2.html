@@ -14,6 +14,16 @@
 </head>
 <body>
     <h1>Choose Your Own Adventure</h1>
+
+    <label for="character">Enter a character's name:</label>
+    <input type="text" id="character" placeholder="e.g., Alice">
+
+    <br>
+
+    <label for="personality">Enter the character's personality:</label>
+    <input type="text" id="personality" placeholder="e.g., Brave">
+
+    <br>
     
     <p id="story"></p>
     <div id="choices"></div>
@@ -23,29 +33,46 @@
         let currentScene = "start";
 
         function generateStory() {
+            const enteredCharacter = document.getElementById("character").value;
+            const enteredPersonality = document.getElementById("personality").value;
+
             storyText = "";
             document.getElementById("choices").innerHTML = "";
 
+            if (!enteredCharacter || !enteredPersonality) {
+                alert("Please enter values for both the character's name and personality.");
+                return;
+            }
+
             if (currentScene === "start") {
-                storyText = "You find yourself at a crossroads.";
-                displayChoices(["Explore the mysterious forest", "Visit the bustling city"]);
+                storyText = `${enteredCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
+                displayChoices(["Explore the mysterious forest", "Visit the bustling city", "Relax on the sunny beach"]);
             } else if (currentScene === "forest") {
-                storyText = "You venture into the forest and encounter a magical creature.";
+                storyText = `As ${enteredCharacter} ventures into the forest, they encounter a magical creature.`;
                 displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
             } else if (currentScene === "city") {
-                storyText = "In the city, you discover a hidden alley with a mysterious door.";
+                storyText = `In the city, ${enteredCharacter} discovers a hidden alley with a mysterious door.`;
                 displayChoices(["Enter the mysterious door", "Explore other parts of the city"]);
+            } else if (currentScene === "beach") {
+                storyText = `${enteredCharacter} decides to relax on the sunny beach.`;
+                displayChoices(["Build a sandcastle", "Take a swim"]);
             } else if (currentScene === "befriendCreature") {
-                storyText = "The creature turns out to be a friendly guide, leading you to hidden wonders in the forest.";
+                storyText = `The creature turns out to be a friendly guide, leading ${enteredCharacter} to hidden wonders in the forest.`;
                 displayEnd();
             } else if (currentScene === "deeperForest") {
-                storyText = "You venture deeper into the forest and stumble upon an ancient ruin.";
+                storyText = `${enteredCharacter} ventures deeper into the forest and stumbles upon an ancient ruin.`;
                 displayEnd();
             } else if (currentScene === "enterDoor") {
-                storyText = "You enter the mysterious door and find yourself in a magical realm.";
+                storyText = `${enteredCharacter} enters the mysterious door and finds themselves in a magical realm.`;
                 displayEnd();
             } else if (currentScene === "exploreCity") {
-                storyText = "You explore various parts of the city, discovering its secrets.";
+                storyText = `${enteredCharacter} explores various parts of the city, discovering its secrets.`;
+                displayEnd();
+            } else if (currentScene === "buildSandcastle") {
+                storyText = `${enteredCharacter} builds an impressive sandcastle on the beach.`;
+                displayEnd();
+            } else if (currentScene === "takeASwim") {
+                storyText = `${enteredCharacter} takes a refreshing swim in the ocean.`;
                 displayEnd();
             }
 
@@ -69,6 +96,8 @@
                     currentScene = "forest";
                 } else if (choice === "Visit the bustling city") {
                     currentScene = "city";
+                } else if (choice === "Relax on the sunny beach") {
+                    currentScene = "beach";
                 }
             } else if (currentScene === "forest") {
                 if (choice === "Befriend the creature") {
@@ -81,6 +110,12 @@
                     currentScene = "enterDoor";
                 } else if (choice === "Explore other parts of the city") {
                     currentScene = "exploreCity";
+                }
+            } else if (currentScene === "beach") {
+                if (choice === "Build a sandcastle") {
+                    currentScene = "buildSandcastle";
+                } else if (choice === "Take a swim") {
+                    currentScene = "takeASwim";
                 }
             }
 
