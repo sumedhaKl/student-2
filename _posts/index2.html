@@ -13,10 +13,15 @@
     </style>
 </head>
 <body>
-    <h1>Choose Your Own Adventure</h1>
+    <h1>Choose Your Own Adventure: Fantasial Darkness</h1>
 
-    <label for="character">Enter a character's name:</label>
-    <input type="text" id="character" placeholder="e.g., Mary">
+    <label for="character">Select a character:</label>
+    <select id="character">
+        <option value="alice">Adam</option>
+        <option value="bob">Sorceresse</option>
+        <option value="charlie">Hasuro</option>
+        <option value="diana">Sakuria</option>
+    </select>
 
     <br>
 
@@ -37,90 +42,87 @@
         let currentScene = "start";
 
         function startAdventure() {
-            const enteredCharacter = document.getElementById("character").value;
+            const selectedCharacter = document.getElementById("character").value;
             const enteredPersonality = document.getElementById("personality").value;
 
-            if (!enteredCharacter || !enteredPersonality) {
-                alert("Please enter values for both the character's name and personality.");
+            if (!enteredPersonality) {
+                alert("Please enter the character's personality.");
                 return;
             }
 
             currentScene = "start";
-            generateStory();
+            generateStory(selectedCharacter, enteredPersonality);
         }
 
-        function generateStory() {
-            const enteredCharacter = document.getElementById("character").value;
-            const enteredPersonality = document.getElementById("personality").value;
-
+        function generateStory(selectedCharacter, enteredPersonality) {
             storyText = "";
             document.getElementById("choices").innerHTML = "";
 
             if (currentScene === "start") {
-                storyText = `${enteredCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
+                storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
                 displayChoices(["Explore the mysterious forest", "Visit the bustling city", "Relax on the sunny beach"]);
             } else if (currentScene === "forest") {
-                storyText = `As ${enteredCharacter} ventures into the forest, they encounter a magical creature.`;
+                storyText = `As ${selectedCharacter} ventures into the forest, they encounter a magical creature.`;
                 displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
             } else if (currentScene === "city") {
-                storyText = `In the city, ${enteredCharacter} discovers a hidden alley with a mysterious door.`;
+                storyText = `In the city, ${selectedCharacter} discovers a hidden alley with a mysterious door.`;
                 displayChoices(["Enter the mysterious door", "Explore other parts of the city"]);
             } else if (currentScene === "beach") {
-                storyText = `${enteredCharacter} decides to relax on the sunny beach.`;
+                storyText = `${selectedCharacter} decides to relax on the sunny beach.`;
                 displayChoices(["Build a sandcastle", "Take a swim"]);
             } else if (currentScene === "befriendCreature") {
-                storyText = `The creature turns out to be a friendly guide, leading ${enteredCharacter} to hidden wonders in the forest.`;
+                storyText = `The creature turns out to be a friendly guide, leading ${selectedCharacter} to hidden wonders in the forest.`;
                 displayChoices(["Follow the guide deeper into the forest", "Thank the guide and explore on your own"]);
             } else if (currentScene === "deeperForest") {
-                storyText = `${enteredCharacter} ventures deeper into the forest and stumbles upon an ancient ruin.`;
+                storyText = `${selectedCharacter} ventures deeper into the forest and stumbles upon an ancient ruin.`;
                 displayChoices(["Investigate the ancient ruin", "Return to the forest entrance"]);
             } else if (currentScene === "enterDoor") {
-                storyText = `${enteredCharacter} enters the mysterious door and finds themselves in a magical realm.`;
+                storyText = `${selectedCharacter} enters the mysterious door and finds themselves in a magical realm.`;
                 displayChoices(["Meet magical creatures", "Seek guidance from a wise wizard"]);
             } else if (currentScene === "exploreCity") {
-                storyText = `${enteredCharacter} explores various parts of the city, discovering its secrets.`;
+                storyText = `${selectedCharacter} explores various parts of the city, discovering its secrets.`;
                 displayChoices(["Visit a bustling marketplace", "Attend a mysterious carnival"]);
             } else if (currentScene === "buildSandcastle") {
-                storyText = `${enteredCharacter} builds an impressive sandcastle on the beach.`;
+                storyText = `${selectedCharacter} builds an impressive sandcastle on the beach.`;
                 displayChoices(["Decorate the sandcastle with seashells", "Challenge someone to a sandcastle-building contest"]);
             } else if (currentScene === "takeASwim") {
-                storyText = `${enteredCharacter} takes a refreshing swim in the ocean.`;
+                storyText = `${selectedCharacter} takes a refreshing swim in the ocean.`;
                 displayChoices(["Dive underwater to explore", "Sunbathe on the beach"]);
             } else if (currentScene === "followGuideDeeper") {
-                storyText = `${enteredCharacter} follows the guide deeper into the forest and discovers a magical realm.`;
+                storyText = `${selectedCharacter} follows the guide deeper into the forest and discovers a magical realm.`;
                 displayEnd();
             } else if (currentScene === "thankGuideAndExplore") {
-                storyText = `${enteredCharacter} thanks the guide and continues exploring the forest, finding hidden treasures.`;
+                storyText = `${selectedCharacter} thanks the guide and continues exploring the forest, finding hidden treasures.`;
                 displayEnd();
             } else if (currentScene === "investigateAncientRuin") {
-                storyText = `${enteredCharacter} investigates the ancient ruin and uncovers ancient artifacts and knowledge.`;
+                storyText = `${selectedCharacter} investigates the ancient ruin and uncovers ancient artifacts and knowledge.`;
                 displayEnd();
             } else if (currentScene === "returnToForestEntrance") {
-                storyText = `${enteredCharacter} decides to return to the forest entrance and continues their journey.`;
+                storyText = `${selectedCharacter} decides to return to the forest entrance and continues their journey.`;
                 displayEnd();
             } else if (currentScene === "meetMagicalCreatures") {
-                storyText = `${enteredCharacter} meets delightful magical creatures and becomes friends with them.`;
+                storyText = `${selectedCharacter} meets delightful magical creatures and becomes friends with them.`;
                 displayEnd();
             } else if (currentScene === "seekGuidanceFromWizard") {
-                storyText = `${enteredCharacter} seeks guidance from a wise wizard who imparts valuable wisdom.`;
+                storyText = `${selectedCharacter} seeks guidance from a wise wizard who imparts valuable wisdom.`;
                 displayEnd();
             } else if (currentScene === "visitBustlingMarketplace") {
-                storyText = `${enteredCharacter} visits a bustling marketplace and discovers unique items and goods.`;
+                storyText = `${selectedCharacter} visits a bustling marketplace and discovers unique items and goods.`;
                 displayEnd();
             } else if (currentScene === "attendMysteriousCarnival") {
-                storyText = `${enteredCharacter} attends a mysterious carnival and enjoys thrilling performances.`;
+                storyText = `${selectedCharacter} attends a mysterious carnival and enjoys thrilling performances.`;
                 displayEnd();
             } else if (currentScene === "decorateWithSeashells") {
-                storyText = `${enteredCharacter} decorates the sandcastle with seashells, creating a work of art.`;
+                storyText = `${selectedCharacter} decorates the sandcastle with seashells, creating a work of art.`;
                 displayEnd();
             } else if (currentScene === "challengeSandcastleContest") {
-                storyText = `${enteredCharacter} challenges someone to a sandcastle-building contest and wins the title of Sandcastle Champion.`;
+                storyText = `${selectedCharacter} challenges someone to a sandcastle-building contest and wins the title of Sandcastle Champion.`;
                 displayEnd();
             } else if (currentScene === "diveUnderwaterToExplore") {
-                storyText = `${enteredCharacter} dives underwater to explore the ocean depths, discovering a hidden underwater city.`;
+                storyText = `${selectedCharacter} dives underwater to explore the ocean depths, discovering a hidden underwater city.`;
                 displayEnd();
             } else if (currentScene === "sunbatheOnBeach") {
-                storyText = `${enteredCharacter} enjoys sunbathing on the beach, feeling the warmth of the sun on their skin.`;
+                storyText = `${selectedCharacter} enjoys sunbathing on the beach, feeling the warmth of the sun on their skin.`;
                 displayEnd();
             }
 
