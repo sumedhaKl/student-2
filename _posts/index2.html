@@ -40,10 +40,12 @@
     <script defer>
         let storyText = "";
         let currentScene = "start";
+        let selectedCharacter = "";
+        let enteredPersonality = "";
 
         function startAdventure() {
-            const selectedCharacter = document.getElementById("character").value;
-            const enteredPersonality = document.getElementById("personality").value;
+            selectedCharacter = document.getElementById("character").value;
+            enteredPersonality = document.getElementById("personality").value;
 
             if (!enteredPersonality) {
                 alert("Please enter the character's personality.");
@@ -51,10 +53,10 @@
             }
 
             currentScene = "start";
-            generateStory(selectedCharacter, enteredPersonality);
+            generateStory();
         }
 
-        function generateStory(selectedCharacter, enteredPersonality) {
+        function generateStory() {
             storyText = "";
             document.getElementById("choices").innerHTML = "";
 
@@ -79,8 +81,52 @@
             } else if (currentScene === "enterDoor") {
                 storyText = `${selectedCharacter} enters the mysterious door and finds themselves in a magical realm.`;
                 displayChoices(["Meet magical creatures", "Seek guidance from a wise wizard"]);
+            } else if (currentScene === "exploreCity") {
+                storyText = `${selectedCharacter} explores various parts of the city, discovering its secrets.`;
+                displayChoices(["Visit a bustling marketplace", "Attend a mysterious carnival"]);
+            } else if (currentScene === "buildSandcastle") {
+                storyText = `${selectedCharacter} builds an impressive sandcastle on the beach.`;
+                displayChoices(["Decorate the sandcastle with seashells", "Challenge someone to a sandcastle-building contest"]);
+            } else if (currentScene === "takeASwim") {
+                storyText = `${selectedCharacter} takes a refreshing swim in the ocean.`;
+                displayChoices(["Dive underwater to explore", "Sunbathe on the beach"]);
+            } else if (currentScene === "followGuideDeeper") {
+                storyText = `${selectedCharacter} follows the guide deeper into the forest and discovers a magical realm.`;
+                displayEnd();
+            } else if (currentScene === "thankGuideAndExplore") {
+                storyText = `${selectedCharacter} thanks the guide and continues exploring the forest, finding hidden treasures.`;
+                displayEnd();
+            } else if (currentScene === "investigateAncientRuin") {
+                storyText = `${selectedCharacter} investigates the ancient ruin and uncovers ancient artifacts and knowledge.`;
+                displayEnd();
+            } else if (currentScene === "returnToForestEntrance") {
+                storyText = `${selectedCharacter} decides to return to the forest entrance and continues their journey.`;
+                displayEnd();
+            } else if (currentScene === "meetMagicalCreatures") {
+                storyText = `${selectedCharacter} meets delightful magical creatures and becomes friends with them.`;
+                displayEnd();
+            } else if (currentScene === "seekGuidanceFromWizard") {
+                storyText = `${selectedCharacter} seeks guidance from a wise wizard who imparts valuable wisdom.`;
+                displayEnd();
+            } else if (currentScene === "visitBustlingMarketplace") {
+                storyText = `${selectedCharacter} visits a bustling marketplace and discovers unique items and goods.`;
+                displayEnd();
+            } else if (currentScene === "attendMysteriousCarnival") {
+                storyText = `${selectedCharacter} attends a mysterious carnival and enjoys thrilling performances.`;
+                displayEnd();
+            } else if (currentScene === "decorateWithSeashells") {
+                storyText = `${selectedCharacter} decorates the sandcastle with seashells, creating a work of art.`;
+                displayEnd();
+            } else if (currentScene === "challengeSandcastleContest") {
+                storyText = `${selectedCharacter} challenges someone to a sandcastle-building contest and wins the title of Sandcastle Champion.`;
+                displayEnd();
+            } else if (currentScene === "diveUnderwaterToExplore") {
+                storyText = `${selectedCharacter} dives underwater to explore the ocean depths, discovering a hidden underwater city.`;
+                displayEnd();
+            } else if (currentScene === "sunbatheOnBeach") {
+                storyText = `${selectedCharacter} enjoys sunbathing on the beach, feeling the warmth of the sun on their skin.`;
+                displayEnd();
             }
-            // ... (continue for other scenes)
 
             document.getElementById("story").innerText = storyText;
         }
@@ -159,9 +205,19 @@
                 } else if (choice === "Sunbathe on the beach") {
                     currentScene = "sunbatheOnBeach";
                 }
+            } else if (currentScene === "decorateWithSeashells") {
+                storyText = `${selectedCharacter} decorates the sandcastle with seashells, creating a work of art.`;
+                displayEnd();
+            } else if (currentScene === "challengeSandcastleContest") {
+                storyText = `${selectedCharacter} challenges someone to a sandcastle-building contest and wins the title of Sandcastle Champion.`;
+                displayEnd();
+            } else if (currentScene === "diveUnderwaterToExplore") {
+                storyText = `${selectedCharacter} dives underwater to explore the ocean depths, discovering a hidden underwater city.`;
+                displayEnd();
+            } else if (currentScene === "sunbatheOnBeach") {
+                storyText = `${selectedCharacter} enjoys sunbathing on the beach, feeling the warmth of the sun on their skin.`;
+                displayEnd();
             }
-
-            generateStory(selectedCharacter, enteredPersonality);
         }
 
         function displayEnd() {
