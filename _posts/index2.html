@@ -65,10 +65,12 @@
             if (currentScene === "start") {
                 storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
             } else {
-                storyText = `${selectedCharacter} ${(index !== undefined && choices[index]) ? choices[index].text : ''}`;
+                if (index !== undefined && choices[index]) {
+                    storyText = `${selectedCharacter} ${choices[index].text}`;
+                }
             }
     
-            if (index !== undefined && choices[index].isEnd) {
+            if (index !== undefined && choices[index] && choices[index].isEnd) {
                 displayEnd();
                 return;
             }
@@ -146,15 +148,17 @@
                 document.getElementById("choices").appendChild(choiceBtn);
             }
         }
+    
         function handleChoice(index) {
             const choices = getChoicesForScene(currentScene);
-
+    
             if (currentScene !== "start") {
                 currentScene = choices[index].scene;
             }
-
-            generateStory();
+    
+            generateStory(index);
         }
+    
         function displayEnd() {
             const endMessage = document.createElement("p");
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
