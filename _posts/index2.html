@@ -146,17 +146,15 @@
                 document.getElementById("choices").appendChild(choiceBtn);
             }
         }
-    
         function handleChoice(index) {
             const choices = getChoicesForScene(currentScene);
-    
+
             if (currentScene !== "start") {
                 currentScene = choices[index].scene;
             }
-    
-            generateStory(index);
+
+            generateStory();
         }
-    
         function displayEnd() {
             const endMessage = document.createElement("p");
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
