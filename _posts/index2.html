@@ -65,10 +65,10 @@
             if (currentScene === "start") {
                 storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
             } else {
-                storyText = `${selectedCharacter} ${choices[index].text}`;
+                storyText = `${selectedCharacter} ${(index !== undefined && choices[index]) ? choices[index].text : ''}`;
             }
     
-            if (choices[index].isEnd) {
+            if (index !== undefined && choices[index].isEnd) {
                 displayEnd();
                 return;
             }
