@@ -68,6 +68,11 @@
                 storyText = `${selectedCharacter} ${choices[index].text}`;
             }
     
+            if (choices[index].isEnd) {
+                displayEnd();
+                return;
+            }
+    
             displayChoices(choices);
             document.getElementById("story").innerText = storyText;
         }
@@ -76,24 +81,54 @@
             switch (scene) {
                 case "start":
                     return [
-                        { text: "Explore the mysterious forest" },
-                        { text: "Visit the bustling city" },
-                        { text: "Relax on the sunny beach" }
+                        { text: "Explore the mysterious forest", scene: "forest" },
+                        { text: "Visit the bustling city", scene: "city" },
+                        { text: "Relax on the sunny beach", scene: "beach" }
                     ];
                 case "forest":
                     return [
-                        { text: "Befriend the creature" },
-                        { text: "Continue deeper into the forest" }
+                        { text: "Befriend the creature", scene: "befriendCreature" },
+                        { text: "Continue deeper into the forest", scene: "deeperForest" }
                     ];
                 case "city":
                     return [
-                        { text: "Enter the mysterious door" },
-                        { text: "Explore other parts of the city" }
+                        { text: "Enter the mysterious door", scene: "enterDoor" },
+                        { text: "Explore other parts of the city", scene: "exploreCity" }
                     ];
                 case "beach":
                     return [
-                        { text: "Build a sandcastle" },
-                        { text: "Take a swim" }
+                        { text: "Build a sandcastle", scene: "buildSandcastle" },
+                        { text: "Take a swim", scene: "takeASwim" }
+                    ];
+                case "befriendCreature":
+                    return [
+                        { text: "Follow the guide deeper into the forest", scene: "followGuideDeeper" },
+                        { text: "Thank the guide and explore on your own", scene: "thankGuideAndExplore" }
+                    ];
+                case "deeperForest":
+                    return [
+                        { text: "Investigate the ancient ruin", scene: "investigateAncientRuin" },
+                        { text: "Return to the forest entrance", scene: "returnToForestEntrance" }
+                    ];
+                case "enterDoor":
+                    return [
+                        { text: "Meet magical creatures", scene: "meetMagicalCreatures" },
+                        { text: "Seek guidance from a wise wizard", scene: "seekGuidanceFromWizard" }
+                    ];
+                case "exploreCity":
+                    return [
+                        { text: "Visit a bustling marketplace", scene: "visitBustlingMarketplace" },
+                        { text: "Attend a mysterious carnival", scene: "attendMysteriousCarnival" }
+                    ];
+                case "buildSandcastle":
+                    return [
+                        { text: "Decorate the sandcastle with seashells", scene: "decorateWithSeashells" },
+                        { text: "Challenge someone to a sandcastle-building contest", scene: "challengeSandcastleContest" }
+                    ];
+                case "takeASwim":
+                    return [
+                        { text: "Dive underwater to explore", scene: "diveUnderwaterToExplore" },
+                        { text: "Sunbathe on the beach", scene: "sunbatheOnBeach" }
                     ];
                 // Add more cases for other scenes as needed
                 default:
@@ -127,6 +162,6 @@
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
             document.getElementById("choices").appendChild(endMessage);
         }
-    </script>    
+    </script>       
 </body>
 </html>
