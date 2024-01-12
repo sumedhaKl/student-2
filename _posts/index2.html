@@ -17,10 +17,10 @@
 
     <label for="character">Select a character:</label>
     <select id="character">
-        <option value="adam">Adam (vampire)</option>
-        <option value="sorceresse">Sorceresse (spell caster)</option>
-        <option value="hasuro">Hasuro (goblin shifter)</option>
-        <option value="sakuria">Sakuria (human princess)</option>
+        <option value="adam">Adam</option>
+        <option value="sorceresse">Sorceresse</option>
+        <option value="hasuro">Hasuro</option>
+        <option value="sakuria">Sakuria</option>
     </select>
 
     <br>
@@ -90,42 +90,21 @@
             } else if (currentScene === "takeASwim") {
                 storyText = `${selectedCharacter} takes a refreshing swim in the ocean.`;
                 displayChoices(["Dive underwater to explore", "Sunbathe on the beach"]);
-            } else if (currentScene === "followGuideDeeper") {
-                storyText = `${selectedCharacter} follows the guide deeper into the forest and discovers a magical realm.`;
-                displayEnd();
-            } else if (currentScene === "thankGuideAndExplore") {
-                storyText = `${selectedCharacter} thanks the guide and continues exploring the forest, finding hidden treasures.`;
-                displayEnd();
-            } else if (currentScene === "investigateAncientRuin") {
-                storyText = `${selectedCharacter} investigates the ancient ruin and uncovers ancient artifacts and knowledge.`;
-                displayEnd();
-            } else if (currentScene === "returnToForestEntrance") {
-                storyText = `${selectedCharacter} decides to return to the forest entrance and continues their journey.`;
-                displayEnd();
-            } else if (currentScene === "meetMagicalCreatures") {
-                storyText = `${selectedCharacter} meets delightful magical creatures and becomes friends with them.`;
-                displayEnd();
-            } else if (currentScene === "seekGuidanceFromWizard") {
-                storyText = `${selectedCharacter} seeks guidance from a wise wizard who imparts valuable wisdom.`;
-                displayEnd();
-            } else if (currentScene === "visitBustlingMarketplace") {
-                storyText = `${selectedCharacter} visits a bustling marketplace and discovers unique items and goods.`;
-                displayEnd();
-            } else if (currentScene === "attendMysteriousCarnival") {
-                storyText = `${selectedCharacter} attends a mysterious carnival and enjoys thrilling performances.`;
-                displayEnd();
-            } else if (currentScene === "decorateWithSeashells") {
-                storyText = `${selectedCharacter} decorates the sandcastle with seashells, creating a work of art.`;
-                displayEnd();
-            } else if (currentScene === "challengeSandcastleContest") {
-                storyText = `${selectedCharacter} challenges someone to a sandcastle-building contest and wins the title of Sandcastle Champion.`;
-                displayEnd();
-            } else if (currentScene === "diveUnderwaterToExplore") {
-                storyText = `${selectedCharacter} dives underwater to explore the ocean depths, discovering a hidden underwater city.`;
-                displayEnd();
-            } else if (currentScene === "sunbatheOnBeach") {
-                storyText = `${selectedCharacter} enjoys sunbathing on the beach, feeling the warmth of the sun on their skin.`;
-                displayEnd();
+            } else if (currentScene === "talkToCharacters") {
+                storyText = `${selectedCharacter} encounters other characters. Who would you like to talk to?`;
+                displayChoices(["Talk to Adam", "Talk to Sorceresse", "Talk to Hasuro", "Talk to Sakuria"]);
+            } else if (currentScene === "talkToAdam") {
+                storyText = `${selectedCharacter} decides to talk to Adam. What would you like to ask him?`;
+                displayChoices(["Ask about his adventures", "Inquire about magical knowledge", "Discuss current situation"]);
+            } else if (currentScene === "talkToSorceresse") {
+                storyText = `${selectedCharacter} decides to talk to Sorceresse. What would you like to ask her?`;
+                displayChoices(["Ask about her magical abilities", "Discuss the mystical realm", "Inquire about her past"]);
+            } else if (currentScene === "talkToHasuro") {
+                storyText = `${selectedCharacter} decides to talk to Hasuro. What would you like to ask him?`;
+                displayChoices(["Ask about his combat skills", "Discuss strategies for the journey", "Inquire about his homeland"]);
+            } else if (currentScene === "talkToSakuria") {
+                storyText = `${selectedCharacter} decides to talk to Sakuria. What would you like to ask her?`;
+                displayChoices(["Ask about her nature-related powers", "Discuss the balance of nature", "Inquire about her favorite places"]);
             }
 
             document.getElementById("story").innerText = storyText;
@@ -205,6 +184,24 @@
                 } else if (choice === "Sunbathe on the beach") {
                     currentScene = "sunbatheOnBeach";
                 }
+            } else if (currentScene === "talkToCharacters") {
+                if (choice === "Talk to Adam") {
+                    currentScene = "talkToAdam";
+                } else if (choice === "Talk to Sorceresse") {
+                    currentScene = "talkToSorceresse";
+                } else if (choice === "Talk to Hasuro") {
+                    currentScene = "talkToHasuro";
+                } else if (choice === "Talk to Sakuria") {
+                    currentScene = "talkToSakuria";
+                }
+            } else if (currentScene === "talkToAdam") {
+                // Handle choices for talking to Adam
+            } else if (currentScene === "talkToSorceresse") {
+                // Handle choices for talking to Sorceresse
+            } else if (currentScene === "talkToHasuro") {
+                // Handle choices for talking to Hasuro
+            } else if (currentScene === "talkToSakuria") {
+                // Handle choices for talking to Sakuria
             }
             // ... (continue for other scenes)
 
@@ -216,9 +213,6 @@
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
             document.getElementById("choices").appendChild(endMessage);
         }
-
-        // Uncommented the initial call to generateStory() to wait for the "Start Adventure" button click
-        // generateStory();
     </script>
 </body>
 </html>
