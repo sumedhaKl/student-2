@@ -93,7 +93,10 @@
             } else if (currentScene === "talkToCharacters") {
                 storyText = `${selectedCharacter} encounters other characters. Who would you like to talk to?`;
                 displayChoices(["Talk to Adam", "Talk to Sorceresse", "Talk to Hasuro", "Talk to Sakuria"]);
-            } else if (currentScene === "endTalkToCharacters" || currentScene === "endTalkToAdam" || currentScene === "endTalkToSorceresse" || currentScene === "endTalkToHasuro" || currentScene === "endTalkToSakuria") {
+            } else if (currentScene === "endTalkToCharacters") {
+                storyText = `${storyText} Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToAdam" || currentScene === "endTalkToSorceresse" || currentScene === "endTalkToHasuro" || currentScene === "endTalkToSakuria") {
                 storyText = `${storyText} Thanks for the conversation!`;
                 displayEnd();
             }
@@ -185,6 +188,8 @@
                 } else if (choice === "Talk to Sakuria") {
                     currentScene = "endTalkToSakuria";
                 }
+            } else if (currentScene === "endTalkToAdam" || currentScene === "endTalkToSorceresse" || currentScene === "endTalkToHasuro" || currentScene === "endTalkToSakuria") {
+                currentScene = "endTalkToCharacters";
             }
 
             generateStory();
