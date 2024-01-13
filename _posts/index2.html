@@ -105,6 +105,18 @@
             } else if (currentScene === "talkToSakuria") {
                 storyText = `${selectedCharacter} decides to talk to Sakuria. What would you like to ask her?`;
                 displayChoices(["Ask about her nature-related powers", "Discuss the balance of nature", "Inquire about her favorite places"]);
+            } else if (currentScene === "endTalkToAdam") {
+                storyText = `${selectedCharacter} finishes talking to Adam. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToSorceresse") {
+                storyText = `${selectedCharacter} finishes talking to Sorceresse. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToHasuro") {
+                storyText = `${selectedCharacter} finishes talking to Hasuro. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToSakuria") {
+                storyText = `${selectedCharacter} finishes talking to Sakuria. Thanks for the conversation!`;
+                displayEnd();
             }
 
             document.getElementById("story").innerText = storyText;
@@ -195,13 +207,49 @@
                     currentScene = "talkToSakuria";
                 }
             } else if (currentScene === "talkToAdam") {
-                // Handle choices for talking to Adam
+                if (choice === "Ask about his adventures") {
+                    currentScene = "endTalkToAdam";
+                } else if (choice === "Inquire about magical knowledge") {
+                    currentScene = "endTalkToAdam";
+                } else if (choice === "Discuss current situation") {
+                    currentScene = "endTalkToAdam";
+                }
             } else if (currentScene === "talkToSorceresse") {
-                // Handle choices for talking to Sorceresse
+                if (choice === "Ask about her magical abilities") {
+                    currentScene = "endTalkToSorceresse";
+                } else if (choice === "Discuss the mystical realm") {
+                    currentScene = "endTalkToSorceresse";
+                } else if (choice === "Inquire about her past") {
+                    currentScene = "endTalkToSorceresse";
+                }
             } else if (currentScene === "talkToHasuro") {
-                // Handle choices for talking to Hasuro
+                if (choice === "Ask about his combat skills") {
+                    currentScene = "endTalkToHasuro";
+                } else if (choice === "Discuss strategies for the journey") {
+                    currentScene = "endTalkToHasuro";
+                } else if (choice === "Inquire about his homeland") {
+                    currentScene = "endTalkToHasuro";
+                }
             } else if (currentScene === "talkToSakuria") {
-                // Handle choices for talking to Sakuria
+                if (choice === "Ask about her nature-related powers") {
+                    currentScene = "endTalkToSakuria";
+                } else if (choice === "Discuss the balance of nature") {
+                    currentScene = "endTalkToSakuria";
+                } else if (choice === "Inquire about her favorite places") {
+                    currentScene = "endTalkToSakuria";
+                }
+            } else if (currentScene === "endTalkToAdam") {
+                storyText = `${selectedCharacter} finishes talking to Adam. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToSorceresse") {
+                storyText = `${selectedCharacter} finishes talking to Sorceresse. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToHasuro") {
+                storyText = `${selectedCharacter} finishes talking to Hasuro. Thanks for the conversation!`;
+                displayEnd();
+            } else if (currentScene === "endTalkToSakuria") {
+                storyText = `${selectedCharacter} finishes talking to Sakuria. Thanks for the conversation!`;
+                displayEnd();
             }
             // ... (continue for other scenes)
 
