@@ -62,16 +62,19 @@
 
             if (currentScene === "start") {
                 storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
-                displayChoices(["Explore the mysterious forest", "Visit the bustling city", "Relax on the sunny beach"]);
-            } else if (currentScene === "forest") {
+                displayChoices(["Go to the inn (Sorceresse)", "Wait inside the inn (Adam)", "Hide out in the forest (Hasuro)", "Stay inside the palace (Sakuria)"]);
+            } else if (currentScene === "outside the inn") {
                 storyText = `As ${selectedCharacter} ventures into the forest, they encounter a magical creature.`;
                 displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
-            } else if (currentScene === "city") {
+            } else if (currentScene === "inn") {
                 storyText = `In the city, ${selectedCharacter} discovers a hidden alley with a mysterious door.`;
                 displayChoices(["Enter the mysterious door", "Explore other parts of the city"]);
-            } else if (currentScene === "beach") {
+            } else if (currentScene === "forest") {
                 storyText = `${selectedCharacter} decides to relax on the sunny beach.`;
                 displayChoices(["Build a sandcastle", "Take a swim"]);
+            } else if (currentScene === "palace") {
+                
+            }
             } else if (currentScene === "befriendCreature") {
                 storyText = `The creature turns out to be a friendly guide, leading ${selectedCharacter} to hidden wonders in the forest.`;
                 displayChoices(["Follow the guide deeper into the forest", "Thank the guide and explore on your own"]);
