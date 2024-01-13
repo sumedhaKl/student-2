@@ -93,18 +93,9 @@
             } else if (currentScene === "talkToCharacters") {
                 storyText = `${selectedCharacter} encounters other characters. Who would you like to talk to?`;
                 displayChoices(["Talk to Adam", "Talk to Sorceresse", "Talk to Hasuro", "Talk to Sakuria"]);
-            } else if (currentScene === "talkToAdam") {
-                storyText = `${selectedCharacter} decides to talk to Adam. What would you like to ask him?`;
-                displayChoices(["Ask about his adventures", "Inquire about magical knowledge", "Discuss current situation"]);
-            } else if (currentScene === "talkToSorceresse") {
-                storyText = `${selectedCharacter} decides to talk to Sorceresse. What would you like to ask her?`;
-                displayChoices(["Ask about her magical abilities", "Discuss the mystical realm", "Inquire about her past"]);
-            } else if (currentScene === "talkToHasuro") {
-                storyText = `${selectedCharacter} decides to talk to Hasuro. What would you like to ask him?`;
-                displayChoices(["Ask about his combat skills", "Discuss strategies for the journey", "Inquire about his homeland"]);
-            } else if (currentScene === "talkToSakuria") {
-                storyText = `${selectedCharacter} decides to talk to Sakuria. What would you like to ask her?`;
-                displayChoices(["Ask about her nature-related powers", "Discuss the balance of nature", "Inquire about her favorite places"]);
+            } else if (currentScene === "endTalkToCharacters") {
+                storyText = `${selectedCharacter} finishes talking to other characters. Thanks for the conversation!`;
+                displayEnd();
             } else if (currentScene === "endTalkToAdam") {
                 storyText = `${selectedCharacter} finishes talking to Adam. Thanks for the conversation!`;
                 displayEnd();
@@ -198,44 +189,12 @@
                 }
             } else if (currentScene === "talkToCharacters") {
                 if (choice === "Talk to Adam") {
-                    currentScene = "talkToAdam";
+                    currentScene = "endTalkToAdam";
                 } else if (choice === "Talk to Sorceresse") {
-                    currentScene = "talkToSorceresse";
+                    currentScene = "endTalkToSorceresse";
                 } else if (choice === "Talk to Hasuro") {
-                    currentScene = "talkToHasuro";
+                    currentScene = "endTalkToHasuro";
                 } else if (choice === "Talk to Sakuria") {
-                    currentScene = "talkToSakuria";
-                }
-            } else if (currentScene === "talkToAdam") {
-                if (choice === "Ask about his adventures") {
-                    currentScene = "endTalkToAdam";
-                } else if (choice === "Inquire about magical knowledge") {
-                    currentScene = "endTalkToAdam";
-                } else if (choice === "Discuss current situation") {
-                    currentScene = "endTalkToAdam";
-                }
-            } else if (currentScene === "talkToSorceresse") {
-                if (choice === "Ask about her magical abilities") {
-                    currentScene = "endTalkToSorceresse";
-                } else if (choice === "Discuss the mystical realm") {
-                    currentScene = "endTalkToSorceresse";
-                } else if (choice === "Inquire about her past") {
-                    currentScene = "endTalkToSorceresse";
-                }
-            } else if (currentScene === "talkToHasuro") {
-                if (choice === "Ask about his combat skills") {
-                    currentScene = "endTalkToHasuro";
-                } else if (choice === "Discuss strategies for the journey") {
-                    currentScene = "endTalkToHasuro";
-                } else if (choice === "Inquire about his homeland") {
-                    currentScene = "endTalkToHasuro";
-                }
-            } else if (currentScene === "talkToSakuria") {
-                if (choice === "Ask about her nature-related powers") {
-                    currentScene = "endTalkToSakuria";
-                } else if (choice === "Discuss the balance of nature") {
-                    currentScene = "endTalkToSakuria";
-                } else if (choice === "Inquire about her favorite places") {
                     currentScene = "endTalkToSakuria";
                 }
             } else if (currentScene === "endTalkToAdam") {
@@ -251,9 +210,8 @@
                 storyText = `${selectedCharacter} finishes talking to Sakuria. Thanks for the conversation!`;
                 displayEnd();
             }
-            // ... (continue for other scenes)
 
-            generateStory();
+            document.getElementById("story").innerText = storyText;
         }
 
         function displayEnd() {
