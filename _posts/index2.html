@@ -93,20 +93,8 @@
             } else if (currentScene === "talkToCharacters") {
                 storyText = `${selectedCharacter} encounters other characters. Who would you like to talk to?`;
                 displayChoices(["Talk to Adam", "Talk to Sorceresse", "Talk to Hasuro", "Talk to Sakuria"]);
-            } else if (currentScene === "endTalkToCharacters") {
-                storyText = `${selectedCharacter} finishes talking to other characters. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToAdam") {
-                storyText = `${selectedCharacter} finishes talking to Adam. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToSorceresse") {
-                storyText = `${selectedCharacter} finishes talking to Sorceresse. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToHasuro") {
-                storyText = `${selectedCharacter} finishes talking to Hasuro. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToSakuria") {
-                storyText = `${selectedCharacter} finishes talking to Sakuria. Thanks for the conversation!`;
+            } else if (currentScene === "endTalkToCharacters" || currentScene === "endTalkToAdam" || currentScene === "endTalkToSorceresse" || currentScene === "endTalkToHasuro" || currentScene === "endTalkToSakuria") {
+                storyText = `${storyText} Thanks for the conversation!`;
                 displayEnd();
             }
 
@@ -197,21 +185,9 @@
                 } else if (choice === "Talk to Sakuria") {
                     currentScene = "endTalkToSakuria";
                 }
-            } else if (currentScene === "endTalkToAdam") {
-                storyText = `${selectedCharacter} finishes talking to Adam. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToSorceresse") {
-                storyText = `${selectedCharacter} finishes talking to Sorceresse. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToHasuro") {
-                storyText = `${selectedCharacter} finishes talking to Hasuro. Thanks for the conversation!`;
-                displayEnd();
-            } else if (currentScene === "endTalkToSakuria") {
-                storyText = `${selectedCharacter} finishes talking to Sakuria. Thanks for the conversation!`;
-                displayEnd();
             }
 
-            document.getElementById("story").innerText = storyText;
+            generateStory();
         }
 
         function displayEnd() {
