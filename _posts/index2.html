@@ -73,6 +73,12 @@
                     storyText = `${selectedCharacter} sits with Adam and discusses the world's current situations`;
                     displayChoices(["Continue talking", "End conversation and go to the forest"]);
                     break;
+                case "Pretend he doesn't exist":
+                    displayEnd();
+                case "Continue talking":
+                    storyText = `${selectedCharacter} continues to talk to Adam and maybe orders a meal or two`;
+                    displayEnd();
+                    break;
                 // Add more cases as needed
                 default:
                     // Handle other scenes or end the game
