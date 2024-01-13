@@ -157,6 +157,11 @@
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
             document.getElementById("choices").appendChild(endMessage);
         }
+
+        // Add end messages for specific scenes
+        if (currentScene === "buildSandcastle" || currentScene === "takeASwim" || currentScene === "deeperForest" || currentScene === "enterDoor" || currentScene === "exploreCity" || currentScene === "talkToCharacters") {
+            displayEnd();
+        }
     </script>
 </body>
 </html>
