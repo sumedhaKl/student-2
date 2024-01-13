@@ -60,32 +60,24 @@
             storyText = "";
             document.getElementById("choices").innerHTML = "";
 
-            if (currentScene === "start") {
-                storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
-                displayChoices(["Go to the inn (Sorceresse)", "Wait inside the inn (Adam)", "Hide out in the forest (Hasuro)", "Stay inside the palace (Sakuria)"]);
-            } else if (currentScene === "inn") {
-                storyText = `In the inn, ${selectedCharacter} decides to take a break.`;
-                displayChoices(["Order a meal", "Chat with other travelers", "Plan the next adventure"]);
-            } else if (currentScene === "orderMeal") {
-                storyText = `${selectedCharacter} orders a delicious meal and enjoys a moment of relaxation.`;
-                displayChoices(["Explore the town further", "Rest in the inn"]);
-            } else if (currentScene === "chatWithTravelers") {
-                storyText = `${selectedCharacter} engages in conversations with other travelers, gaining valuable information.`;
-                displayChoices(["Embark on a new quest", "Return to the inn"]);
-            } else if (currentScene === "planNextAdventure") {
-                storyText = `${selectedCharacter} plans the next adventure, considering various options.`;
-                displayChoices(["Head to the mysterious forest", "Visit the bustling city", "Explore the hidden beach"]);
-            } else if (currentScene === "outsideTheInn") {
-                storyText = `${selectedCharacter} steps outside the inn, ready for a new journey.`;
-                displayChoices(["Go to the mysterious forest", "Visit the bustling city", "Explore the hidden beach"]);
-            } else if (currentScene === "forest") {
-                storyText = `As ${selectedCharacter} ventures into the forest, they encounter a magical creature.`;
-                displayChoices(["Befriend the creature", "Continue deeper into the forest"]);
-            } else if (currentScene === "beach") {
-                storyText = `${selectedCharacter} decides to relax on the sunny beach.`;
-                displayChoices(["Build a sandcastle", "Take a swim"]);
-            } else if (currentScene === "palace") {
-                // Add palace scene logic here if needed
+            switch (currentScene) {
+                case "start":
+                    storyText = `${selectedCharacter} is a ${enteredPersonality} person who finds themselves at a crossroads.`;
+                    displayChoices(["Go to the inn (Sorceresse)", "Wait inside the inn (Adam)", "Hide out in the forest (Hasuro)", "Stay inside the palace (Sakuria)"]);
+                    break;
+                case "inn":
+                    storyText = `In the inn, ${selectedCharacter} decides to ...`;
+                    displayChoices(["Talk to Adam", "Pretend he doesn't exist"]);
+                    break;
+                case "Talk to Adam":
+                    storyText = `${selectedCharacter} sits with Adam and discusses the world's current situations`;
+                    displayChoices(["Continue talking", "End conversation and go to the forest"]);
+                    break;
+                // Add more cases as needed
+                default:
+                    // Handle other scenes or end the game
+                    displayEnd();
+                    break;
             }
 
             document.getElementById("story").innerText = storyText;
@@ -103,50 +95,35 @@
         }
 
         function handleChoice(choice) {
-            if (currentScene === "start") {
-                if (choice === "Go to the inn (Sorceresse)") {
-                    currentScene = "inn";
-                } else if (choice === "Wait inside the inn (Adam)") {
-                    currentScene = "insideTheInn";
-                } else if (choice === "Hide out in the forest (Hasuro)") {
-                    currentScene = "outsideTheInn";
-                } else if (choice === "Stay inside the palace (Sakuria)") {
-                    currentScene = "palace";
-                }
-            } else if (currentScene === "inn") {
-                if (choice === "Order a meal") {
-                    currentScene = "orderMeal";
-                } else if (choice === "Chat with other travelers") {
-                    currentScene = "chatWithTravelers";
-                } else if (choice === "Plan the next adventure") {
-                    currentScene = "planNextAdventure";
-                }
-            } else if (currentScene === "orderMeal" || currentScene === "chatWithTravelers" || currentScene === "planNextAdventure") {
-                if (choice === "Explore the town further") {
-                    currentScene = "outsideTheInn";
-                } else if (choice === "Rest in the inn") {
-                    currentScene = "inn";
-                }
-            } else if (currentScene === "outsideTheInn") {
-                if (choice === "Go to the mysterious forest") {
-                    currentScene = "forest";
-                } else if (choice === "Visit the bustling city") {
-                    currentScene = "city";
-                } else if (choice === "Explore the hidden beach") {
-                    currentScene = "beach";
-                }
-            } else if (currentScene === "forest") {
-                if (choice === "Befriend the creature") {
-                    currentScene = "befriendCreature";
-                } else if (choice === "Continue deeper into the forest") {
-                    currentScene = "deeperForest";
-                }
-            } else if (currentScene === "beach") {
-                if (choice === "Build a sandcastle") {
-                    currentScene = "buildSandcastle";
-                } else if (choice === "Take a swim") {
-                    currentScene = "takeASwim";
-                }
+            switch (currentScene) {
+                case "start":
+                    if (choice === "Go to the inn (Sorceresse)") {
+                        currentScene = "inn";
+                    } else if (choice === "Wait inside the inn (Adam)") {
+                        currentScene = "insideTheInn";
+                    } else if (choice === "Hide out in the forest (Hasuro)") {
+                        currentScene = "outsideTheInn";
+                    } else if (choice === "Stay inside the palace (Sakuria)") {
+                        currentScene = "palace";
+                    }
+                    break;
+                case "inn":
+                    if (choice === "Talk to Adam") {
+                        currentScene = "Talk to Adam";
+                    } else if (choice === "Pretend he doesn't exist") {
+                        currentScene = "chatWithTravelers";
+                    }
+                    break;
+                case "Talk to Adam":
+                    if (choice === "Continue talking") {
+                        // Handle the continuation of the conversation
+                    } else if (choice === "End conversation and go to the forest") {
+                        currentScene = "forest";
+                    }
+                    break;
+                // Add more cases as needed
+                default:
+                    break;
             }
 
             generateStory();
@@ -156,11 +133,6 @@
             const endMessage = document.createElement("p");
             endMessage.innerText = "The adventure comes to an end. Thanks for playing!";
             document.getElementById("choices").appendChild(endMessage);
-        }
-
-        // Add end messages for specific scenes
-        if (currentScene === "buildSandcastle" || currentScene === "takeASwim" || currentScene === "deeperForest" || currentScene === "enterDoor" || currentScene === "exploreCity" || currentScene === "talkToCharacters") {
-            displayEnd();
         }
     </script>
 </body>
