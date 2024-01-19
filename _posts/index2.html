@@ -78,7 +78,7 @@
                     break;
                 case "Continue talking":
                     storyText = `${selectedCharacter} continues to talk to Adam and maybe orders a meal or two`;
-                    displayEnd();
+                    displayChoices(["End conversation and go to the forest"]);
                     break;
                 // Add more cases as needed
                 default:
@@ -123,7 +123,7 @@
                     break;
                 case "Talk to Adam":
                     if (choice === "Continue talking") {
-                        // Handle the continuation of the conversation
+                        currentScene = "Continue talking";
                     } else if (choice === "End conversation and go to the forest") {
                         currentScene = "forest";
                     }
