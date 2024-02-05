@@ -1,7 +1,7 @@
 from flask import render_template, request
 from flask.cli import AppGroup
 from flask_cors import CORS  # Import CORS for handling cross-origin requests
-from student_2 import app, db
+from main import app, db
 
 from _posts.model import users
 
