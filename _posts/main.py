@@ -1,12 +1,9 @@
 from flask import render_template, request
 from flask.cli import AppGroup
 from flask_cors import CORS  # Import CORS for handling cross-origin requests
-from __init__ import app, db
-from api.user import user_api
-from api.player import player_api
-from model.users import initUsers
-from model.players import initPlayers
-from projects.projects import app_projects
+from student_2 import app, db
+
+from _posts.model import users
 
 # Initialize the CORS extension
 cors = CORS(app)
