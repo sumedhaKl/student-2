@@ -4,7 +4,7 @@ body, html {
     padding: 0;
 }
 
-#map {
+#mapCanvas {
     width: 100%;
     height: 80vh;
     background-color: #f0f0f0;
@@ -12,4 +12,11 @@ body, html {
 
 #controls {
     padding: 20px;
+}
+
+#controls input[type="color"],
+#controls input[type="text"],
+#controls button {
+    margin-bottom: 10px;
+    display: block;
 }
