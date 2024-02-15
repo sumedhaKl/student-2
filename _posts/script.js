@@ -25,6 +25,8 @@ function applyCustomization() {
     const province = document.getElementById('province').value;
     const state = document.getElementById('state').value;
 
+    provinces = [];
+
     console.log('Map Name:', mapName);
     console.log('Culture:', culture);
     console.log('Province:', province);
@@ -39,18 +41,15 @@ const ctx = canvas.getContext('2d');
 function drawRegion() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const numShapes = Math.floor(Math.random() * 10) + 5;
-    for (let i = 0; i < numShapes; i++) {
-        const shapeColor = getRandomColor();
-        const x = Math.random() * (canvas.width - 100);
-        const y = Math.random() * (canvas.height - 100);
-        const width = Math.random() * 100 + 50;
-        const height = Math.random() * 100 + 50;
-        ctx.fillStyle = shapeColor;
-        ctx.fillRect(x, y, width, height);
+    const shapeColor = getRandomColor();
+    const x = Math.random() * (canvas.width - 100);
+    const y = Math.random() * (canvas.height - 100);
+    const width = Math.random() * 100 + 50; 
+    const height = Math.random() * 100 + 50; 
+    ctx.fillStyle = shapeColor;
+    ctx.fillRect(x, y, width, height);
 
-        provinces.push({ name: `Province ${i + 1}`, x: x, y: y });
-    }
+    provinces.push({ name: document.getElementById('province').value, x: x, y: y });
 
     const mapName = document.getElementById('mapName').value;
     ctx.fillStyle = '#000000';
