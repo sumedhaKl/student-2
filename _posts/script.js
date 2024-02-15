@@ -1,4 +1,3 @@
-// Define fantasy kingdom names
 const fantasyKingdomNames = [
     "Eldoria",
     "Avaloria",
@@ -12,60 +11,64 @@ const fantasyKingdomNames = [
     "Sunrise Dominion"
 ];
 
-// Function to select a random fantasy kingdom name
-function getRandomKingdomName() {
-    return fantasyKingdomNames[Math.floor(Math.random() * fantasyKingdomNames.length)];
-}
+let provinces = [];
 
-// Function to generate a random map name
 function generateRandomMapName() {
-    const adjectives = ["Mystical", "Enchanted", "Forgotten", "Eternal", "Celestial", "Whispering", "Emerald", "Shadowed", "Golden", "Sapphire"];
-    const nouns = ["Realm", "Land", "World", "Kingdom", "Empire", "Domain", "Territory", "Province", "Region", "Island"];
-    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-    return randomAdjective + " " + randomNoun;
+    const randomMapName = fantasyKingdomNames[Math.floor(Math.random() * fantasyKingdomNames.length)];
+    document.getElementById('mapName').value = randomMapName;
+    drawRegion();
 }
 
-// Function to apply customizations
 function applyCustomization() {
     const mapName = document.getElementById('mapName').value;
     const culture = document.getElementById('culture').value;
     const province = document.getElementById('province').value;
     const state = document.getElementById('state').value;
 
-    // Apply customizations to the map
     console.log('Map Name:', mapName);
     console.log('Culture:', culture);
     console.log('Province:', province);
     console.log('State:', state);
+
+    drawRegion();
 }
 
-// Function to generate a random map name and fill into the map name input field
-function generateRandomMapNameField() {
-    const mapNameInput = document.getElementById('mapName');
-    mapNameInput.value = generateRandomMapName();
-}
-
-// Get canvas and context
 const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d');
 
-// Function to draw a region on the canvas
 function drawRegion() {
-    const regionColor = document.getElementById('regionColor').value;
-    const regionName = document.getElementById('regionName').value;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw a simple rectangle for the region
-    const x = Math.random() * (canvas.width - 100);
-    const y = Math.random() * (canvas.height - 100);
-    const width = 100;
-    const height = 100;
+    const numShapes = Math.floor(Math.random() * 10) + 5;
+    for (let i = 0; i < numShapes; i++) {
+        const shapeColor = getRandomColor();
+        const x = Math.random() * (canvas.width - 100);
+        const y = Math.random() * (canvas.height - 100);
+        const width = Math.random() * 100 + 50;
+        const height = Math.random() * 100 + 50;
+        ctx.fillStyle = shapeColor;
+        ctx.fillRect(x, y, width, height);
 
-    ctx.fillStyle = regionColor;
-    ctx.fillRect(x, y, width, height);
+        provinces.push({ name: `Province ${i + 1}`, x: x, y: y });
+    }
 
-    // Draw region name
+    const mapName = document.getElementById('mapName').value;
     ctx.fillStyle = '#000000';
+    ctx.font = 'bold 20px Arial';
+    ctx.fillText(mapName, 20, 40);
+
     ctx.font = '14px Arial';
-    ctx.fillText(regionName, x + 10, y + 20);
+    ctx.fillStyle = '#000000';
+    provinces.forEach(province => {
+        ctx.fillText(province.name, province.x, province.y + 20);
+    });
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
