@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,13 @@
     <p>Created by Sumedha Kamaraju. Choose what you need.</p>
 
     <h2>Categories: </h2>
-    <p>Clothing, food, household items</p>
+    <select id="categorySelect" onchange="showProducts()">
+        <option value="clothing">Clothing</option>
+        <option value="food">Food</option>
+        <option value="household">Household Items</option>
+    </select>
+
+    <div id="productList"></div>
 
     <div id="orderTracking">
         <h2>Order Tracking:</h2>
