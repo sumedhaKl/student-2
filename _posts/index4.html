@@ -3,18 +3,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Site</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
 <body>
     <h1>Welcome to the shopping site! Here you can buy what you want any time!</h1>
-    <p>Created by (insert name) Choose what you need</p>
+    <p>Created by Sumedha Kamaraju. Choose what you need.</p>
 
     <h2>Categories: </h2>
-    <p1>Clothing, food, household items</p1>
-</body>
-<script>
+    <p>Clothing, food, household items</p>
 
-</script>
+    <div id="orderTracking">
+        <h2>Order Tracking:</h2>
+        <p id="orderStatus"></p>
+        <button onclick="placeOrder()">Place Order</button>
+    </div>
+
+    <div id="pastOrders">
+        <h2>Past Orders:</h2>
+        <ul id="pastOrdersList"></ul>
+    </div>
+
+    <script src="shopping.js"></script>
+</body>
 </html>
