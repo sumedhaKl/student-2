@@ -28,7 +28,7 @@ function showProducts() {
     if (productList) {
         let html = "<h2>Available Products:</h2><ul>";
         productList.forEach(product => {
-            html += `<li><input type="checkbox" value="${product.name}" onchange="toggleProduct(this)">${product.name} - $${product.price}</li>`;
+            html += `<li><input type="checkbox" value="${product.name}" onchange="toggleProduct(this, ${product.price})">${product.name} - $${product.price}</li>`;
         });
         html += "</ul>";
         productListDiv.innerHTML = html;
@@ -37,11 +37,11 @@ function showProducts() {
     }
 }
 
-function toggleProduct(checkbox) {
+function toggleProduct(checkbox, price) {
     const productName = checkbox.value;
     const product = products[selectedCategory].find(item => item.name === productName);
     if (checkbox.checked) {
-        selectedProducts.push(product);
+        selectedProducts.push({ name: productName, price: price });
     } else {
         selectedProducts = selectedProducts.filter(item => item.name !== productName);
     }
@@ -57,12 +57,18 @@ function placeOrder() {
     orderStatusElement.textContent = "Order placed. Estimated delivery: 3 days.";
 
     const pastOrdersList = document.getElementById("pastOrdersList");
+    let totalCost = 0;
     selectedProducts.forEach(product => {
         const newOrder = { id: pastOrdersList.childElementCount + 1, date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing" };
         const listItem = document.createElement("li");
         listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;
         pastOrdersList.appendChild(listItem);
+        totalCost += product.price;
     });
+
+    const totalElement = document.createElement("p");
+    totalElement.textContent = `Total: $${totalCost}`;
+    pastOrdersList.appendChild(totalElement);
 
     localStorage.setItem("pastOrders", JSON.stringify(Array.from(pastOrdersList.children).map(item => item.textContent)));
 
