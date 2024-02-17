@@ -31,4 +31,28 @@ function placeOrder() {
     const listItem = document.createElement("li");
     listItem.textContent = `${newOrder.date}: ${newOrder.product} (${newOrder.status})`;
     pastOrdersList.appendChild(listItem);
+
+    localStorage.setItem("pastOrders", JSON.stringify(Array.from(pastOrdersList.children).map(item => item.textContent)));
 }
+
+function resetOrders() {
+    localStorage.removeItem("pastOrders");
+}
+
+function displayPastOrders() {
+    const pastOrdersList = document.getElementById("pastOrdersList");
+    const storedOrders = JSON.parse(localStorage.getItem("pastOrders"));
+
+    if (storedOrders) {
+        storedOrders.forEach(order => {
+            const listItem = document.createElement("li");
+            listItem.textContent = order;
+            pastOrdersList.appendChild(listItem);
+        });
+    }
+}
+
+window.onload = function() {
+    displayPastOrders();
+    resetOrders();
+};
