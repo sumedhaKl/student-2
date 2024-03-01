@@ -48,6 +48,9 @@ For our passion project, we made a mental health site for people to learn more a
   </tbody>
 </table>
 
+<h1 id="component-b-video">Component B: Video</h1>
+<p><a href="https://drive.google.com/file/d/18ltuPQsnjjsf6luTT-Vge0XbNTPG9IMV/view" class="button">Click here to view the video</a></p>
+
 <table>
   <thead>
     <tr>
@@ -58,23 +61,23 @@ For our passion project, we made a mental health site for people to learn more a
   <tbody>
     <tr>
       <td>Input to program</td>
-      <td>This is highlighted in the video when we click on the quote repository feature and enter the information. This information (the quote, quote author, and quote opinion) is entered accordingly at the beginning of the video.</td>
+      <td>This is shown in the video when the cards are clicked which triggers code to check if they are a match.</td>
     </tr>
     <tr>
       <td>At least one aspect of the functionality of your program</td>
-      <td>There is a quote storage where you can view the quotes that you wrote up and look back on some influential quotes and the opinions that you had on them. This showcase is demonstrated in the video.</td>
+      <td>The card match can be identified quickly and the cards that do not match are flipped back in a short time. </td>
     </tr>
     <tr>
       <td>Output produced by program</td>
-      <td>Once input is entered and submitted, there is an output/popup which lets you know if the quote has been submitted successfully or not. When you redirect to the quote showcase, the input, if successfully entered, will be saved as a result that you can refer back to.</td>
+      <td>Once the cards are matched, then they remain frozen for the rest of the game while the user experiments with the remaining cards.</td>
     </tr>
     <tr>
       <td>My video does not have:</td>
-      <td>The video does not display any other feature or its code and does not include a background voice narration.</td>
+      <td>The video does not include audio.</td>
     </tr>
     <tr>
       <td>My video is:</td>
-      <td>Exactly 1 minute long in the form of a .mp4 file and 5.60 GB.</td>
+      <td>Exactly 39 seconds long in the form of a .mp4 file and 8200 KB.</td>
     </tr>
   </tbody>
 </table>
