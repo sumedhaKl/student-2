@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const storyModal = document.getElementById("storyModal");
     const closeBtn = document.getElementsByClassName("close")[0];
     const submitStoryBtn = document.getElementById("submitStoryBtn");
+    const addPartBtn = document.getElementById("addPartBtn");
     const storyList = document.getElementById("storyList");
 
     createStoryBtn.addEventListener("click", function() {
@@ -32,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    addPartBtn.addEventListener("click", function() {
+        const storyContent = document.getElementById("storyContent");
+        storyContent.innerHTML += "<hr><div class='editable' contenteditable='true' placeholder='Write the next part of your story here'></div>";
+    });
+
     function createStory(title, content) {
         const storyCard = document.createElement("div");
         storyCard.classList.add("storyCard");
@@ -39,15 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
         titleElement.textContent = title;
         const contentElement = document.createElement("div");
         contentElement.innerHTML = content;
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
-        deleteBtn.classList.add("deleteBtn");
-        deleteBtn.addEventListener("click", function() {
-            storyCard.remove();
-        });
         storyCard.appendChild(titleElement);
         storyCard.appendChild(contentElement);
-        storyCard.appendChild(deleteBtn);
         storyList.appendChild(storyCard);
     }
 });
