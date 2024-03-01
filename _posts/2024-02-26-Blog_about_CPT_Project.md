@@ -23,7 +23,7 @@ For our passion project, we made a mental health site for people to learn more a
   <tbody>
     <tr>
       <td>Instructions for input from one of the following: the user, a device, an online data stream, a file</td>
-      <td><img src="{{ site.baseurl }}/Screenshot (197).png"/> - The code above uses JS code to allow a user to click on a card to reveal the image below it. This allows the user to see whether the images on the two cards match or not.</td>
+      <td><img src="{{ site.baseurl }}/images/Screenshot (197).png"/> - The code above uses JS code to allow a user to click on a card to reveal the image below it. This allows the user to see whether the images on the two cards match or not.</td>
     </tr>
     <tr>
       <td>Use of at least one list (or other collection type) to represent a collection of data that is stored and used to manage program complexity and help fulfill the user’s purpose.</td>
