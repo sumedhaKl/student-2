@@ -8,10 +8,11 @@ type: tangibles
 courses: { compsci: {week: 8} }
 ---
 ## CPT Project
+For our passion project, we made a mental health site for people to learn more about their mental health. 
 
 ### Overview of my Project
 
-For our passion project, we made a mental health site for people to learn more about their mental health. 
+I made a memory game to test focus,memory and recall. Users can flip cards to see if they match. Once the cards match, their image freezes and the user can continue to look for more matches.
 
 <table>
   <thead>
