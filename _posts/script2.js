@@ -45,8 +45,16 @@ document.addEventListener("DOMContentLoaded", function() {
         titleElement.textContent = title;
         const contentElement = document.createElement("div");
         contentElement.innerHTML = content;
+        contentElement.classList.add("storyContent");
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("deleteBtn");
+        deleteBtn.addEventListener("click", function() {
+            storyCard.remove();
+        });
         storyCard.appendChild(titleElement);
         storyCard.appendChild(contentElement);
+        storyCard.appendChild(deleteBtn);
         storyList.appendChild(storyCard);
     }
 });
