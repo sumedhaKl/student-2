@@ -22,14 +22,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     submitStoryBtn.addEventListener("click", function() {
         const title = document.getElementById("storyTitle").value;
+        const description = document.getElementById("storyDescription").value;
         const content = document.getElementById("storyContent").innerHTML;
-        if (title.trim() !== "" && content.trim() !== "") {
-            createStory(title, content);
+        if (title.trim() !== "" && description.trim() !== "" && content.trim() !== "") {
+            createStory(title, description, content);
             storyModal.style.display = "none";
             document.getElementById("storyTitle").value = "";
+            document.getElementById("storyDescription").value = "";
             document.getElementById("storyContent").innerHTML = "";
         } else {
-            alert("Please enter a title and content for your story.");
+            alert("Please enter a title, description, and content for your story.");
         }
     });
 
@@ -38,11 +40,14 @@ document.addEventListener("DOMContentLoaded", function() {
         storyContent.innerHTML += "<hr><div class='editable' contenteditable='true' placeholder='Write the next part of your story here'></div>";
     });
 
-    function createStory(title, content) {
+    function createStory(title, description, content) {
         const storyCard = document.createElement("div");
         storyCard.classList.add("storyCard");
         const titleElement = document.createElement("h3");
         titleElement.textContent = title;
+        const descriptionElement = document.createElement("p");
+        descriptionElement.textContent = description;
+        descriptionElement.classList.add("storyDescription");
         const contentElement = document.createElement("div");
         contentElement.innerHTML = content;
         contentElement.classList.add("storyContent");
@@ -53,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
             storyCard.remove();
         });
         storyCard.appendChild(titleElement);
+        storyCard.appendChild(descriptionElement);
         storyCard.appendChild(contentElement);
         storyCard.appendChild(deleteBtn);
         storyList.appendChild(storyCard);
