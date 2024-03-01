@@ -56,5 +56,10 @@ document.addEventListener("DOMContentLoaded", function() {
         storyCard.appendChild(contentElement);
         storyCard.appendChild(deleteBtn);
         storyList.appendChild(storyCard);
+
+        const parts = contentElement.querySelectorAll('.editable');
+        parts.forEach(part => {
+            part.removeAttribute('contenteditable');
+        });
     }
 });
