@@ -15,7 +15,7 @@ For our passion project, we made a mental health site for people to learn more a
 I made a memory game to test focus, memory, and recall. Users can flip cards to see if they match. Once the cards match, their image freezes and the user can continue to look for more matches.
 
 <table>
-  <thead>
+  <thead>=
     <tr>
       <th>College Board Requirements</th>
       <th>My work</th>
