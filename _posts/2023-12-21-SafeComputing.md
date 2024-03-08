@@ -183,6 +183,7 @@ Original password: hello (fake) New password: H3II0_#^ _ ^ (fake)
 **Please answer these questions and send them to Daniel Lee on Slack. Graded on accuracy. Write at least 2-3 sentences.**
 
 What is Personal Identifiable Information (PII), and list three examples of it?
+Personal identifiable information is 
 
 PII is used to identify people using their personal information. Three examples of this are: name, address, and phone number.
 

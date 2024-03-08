@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeBtn = document.getElementsByClassName("close")[0];
     const submitStoryBtn = document.getElementById("submitStoryBtn");
     const addPartBtn = document.getElementById("addPartBtn");
+    const startWritingBtn = document.getElementById("startWritingBtn");
     const storyList = document.getElementById("storyList");
 
     createStoryBtn.addEventListener("click", function() {
@@ -20,16 +21,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    submitStoryBtn.addEventListener("click", function() {
+    document.getElementById("storyDescription").addEventListener("input", function() {
+        if (this.value.trim() !== "") {
+            startWritingBtn.removeAttribute("disabled");
+        } else {
+            startWritingBtn.setAttribute("disabled", "disabled");
+        }
+    });
+
+    startWritingBtn.addEventListener("click", function() {
         const title = document.getElementById("storyTitle").value;
         const description = document.getElementById("storyDescription").value;
         const content = document.getElementById("storyContent").innerHTML;
         if (title.trim() !== "" && description.trim() !== "" && content.trim() !== "") {
-            createStory(title, description, content);
-            storyModal.style.display = "none";
-            document.getElementById("storyTitle").value = "";
-            document.getElementById("storyDescription").value = "";
-            document.getElementById("storyContent").innerHTML = "";
+            window.location.href = "indexsub1.html?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&content=" + encodeURIComponent(content);
         } else {
             alert("Please enter a title, description, and content for your story.");
         }
