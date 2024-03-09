@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
     saveStoryBtn.addEventListener("click", function() {
         const newContent = storyContent.innerHTML;
         // You can implement saving functionality here, e.g., send data to a server or save to localStorage
-        alert("Story saved!");
+
+        // Redirect to main site after saving
+        window.location.href = "index.html";
     });
 });
