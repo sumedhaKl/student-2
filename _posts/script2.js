@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const storyModal = document.getElementById("storyModal");
     const closeBtn = document.getElementsByClassName("close")[0];
     const submitStoryBtn = document.getElementById("submitStoryBtn");
-    const addPartBtn = document.getElementById("addPartBtn");
     const startWritingBtn = document.getElementById("startWritingBtn");
     const storyList = document.getElementById("storyList");
 
@@ -21,28 +20,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    document.getElementById("storyDescription").addEventListener("input", function() {
-        if (this.value.trim() !== "") {
+    document.getElementById("storyTitle").addEventListener("input", checkInputs);
+    document.getElementById("storyDescription").addEventListener("input", checkInputs);
+
+    function checkInputs() {
+        const title = document.getElementById("storyTitle").value.trim();
+        const description = document.getElementById("storyDescription").value.trim();
+        if (title !== "" && description !== "") {
             startWritingBtn.removeAttribute("disabled");
         } else {
             startWritingBtn.setAttribute("disabled", "disabled");
         }
-    });
+    }
 
     startWritingBtn.addEventListener("click", function() {
         const title = document.getElementById("storyTitle").value;
         const description = document.getElementById("storyDescription").value;
-        const content = document.getElementById("storyContent").innerHTML;
-        if (title.trim() !== "" && description.trim() !== "") {
-            window.location.href = "indexsub1.html?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&content=" + encodeURIComponent(content);
-        } else {
-            alert("Please enter a title and description for your story.");
-        }
-    });
-
-    addPartBtn.addEventListener("click", function() {
-        const storyContent = document.getElementById("storyContent");
-        storyContent.innerHTML += "<hr><div class='editable' contenteditable='true' placeholder='Write the next part of your story here'></div>";
+        window.location.href = "indexsub1.html?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description);
     });
 
     submitStoryBtn.addEventListener("click", function() {
