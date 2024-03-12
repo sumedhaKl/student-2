@@ -33,16 +33,31 @@ document.addEventListener("DOMContentLoaded", function() {
         const title = document.getElementById("storyTitle").value;
         const description = document.getElementById("storyDescription").value;
         const content = document.getElementById("storyContent").innerHTML;
-        if (title.trim() !== "" && description.trim() !== "" && content.trim() !== "") {
+        if (title.trim() !== "" && description.trim() !== "") {
             window.location.href = "indexsub1.html?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&content=" + encodeURIComponent(content);
         } else {
-            alert("Please enter a title, description, and content for your story.");
+            alert("Please enter a title and description for your story.");
         }
     });
 
     addPartBtn.addEventListener("click", function() {
         const storyContent = document.getElementById("storyContent");
         storyContent.innerHTML += "<hr><div class='editable' contenteditable='true' placeholder='Write the next part of your story here'></div>";
+    });
+
+    submitStoryBtn.addEventListener("click", function() {
+        const title = document.getElementById("storyTitle").value;
+        const description = document.getElementById("storyDescription").value;
+        const content = document.getElementById("storyContent").innerHTML;
+        if (title.trim() !== "" && description.trim() !== "" && content.trim() !== "") {
+            createStory(title, description, content);
+            storyModal.style.display = "none";
+            document.getElementById("storyTitle").value = "";
+            document.getElementById("storyDescription").value = "";
+            document.getElementById("storyContent").innerHTML = "";
+        } else {
+            alert("Please enter a title, description, and content for your story.");
+        }
     });
 
     function createStory(title, description, content) {
