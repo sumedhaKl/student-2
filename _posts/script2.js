@@ -42,19 +42,17 @@ document.addEventListener("DOMContentLoaded", function() {
     submitStoryBtn.addEventListener("click", function() {
         const title = document.getElementById("storyTitle").value;
         const description = document.getElementById("storyDescription").value;
-        const content = document.getElementById("storyContent").innerHTML;
-        if (title.trim() !== "" && description.trim() !== "" && content.trim() !== "") {
-            createStory(title, description, content);
+        if (title.trim() !== "" && description.trim() !== "") {
+            createStory(title, description);
             storyModal.style.display = "none";
             document.getElementById("storyTitle").value = "";
             document.getElementById("storyDescription").value = "";
-            document.getElementById("storyContent").innerHTML = "";
         } else {
-            alert("Please enter a title, description, and content for your story.");
+            alert("Please enter a title and description for your story.");
         }
     });
 
-    function createStory(title, description, content) {
+    function createStory(title, description) {
         const storyCard = document.createElement("div");
         storyCard.classList.add("storyCard");
         const titleElement = document.createElement("h3");
@@ -62,9 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const descriptionElement = document.createElement("p");
         descriptionElement.textContent = description;
         descriptionElement.classList.add("storyDescription");
-        const contentElement = document.createElement("div");
-        contentElement.innerHTML = content;
-        contentElement.classList.add("storyContent");
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("deleteBtn");
@@ -73,13 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         storyCard.appendChild(titleElement);
         storyCard.appendChild(descriptionElement);
-        storyCard.appendChild(contentElement);
         storyCard.appendChild(deleteBtn);
         storyList.appendChild(storyCard);
-
-        const parts = contentElement.querySelectorAll('.editable');
-        parts.forEach(part => {
-            part.removeAttribute('contenteditable');
-        });
     }
 });
