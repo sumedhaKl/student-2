@@ -11,6 +11,7 @@ type: blogs
 Ended with a 93% in Trimester 2  
 
 Frontend
+
 https://github.com/AnanyaAsudani/Frontend-CPT
 
 Team Work
@@ -18,6 +19,7 @@ Team Work
 I worked on the frontend and created several games to help increase users' memory and focus. We worked well together when making our code. I wrote the code for 3 games and presented them to my team but only one was part of the final site. 
 
 Backend
+
 https://github.com/Priya0726/Final_Flask_Portfolio
 
 Deployment
