@@ -23,6 +23,7 @@ let currentQuest = null;
 
 function generateQuest() {
   currentQuest = quests[Math.floor(Math.random() * quests.length)];
+  document.getElementById('questDescription').innerText = currentQuest.description;
 }
 
 generateQuest();
