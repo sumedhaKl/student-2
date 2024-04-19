@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Preferences</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #fff;
+            color: #000;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .option {
+            margin: 0 20px;
+            cursor: pointer;
+            text-decoration: underline;
+            color: blue;
+        }
+        .option:hover {
+            text-decoration: none;
+        }
+        #activities-list {
+            display: none;
+            margin-top: 50px;
+        }
+        #activities-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #activities-list ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="question1">
+        <div class="question">Indoor or Outdoor?</div>
+        <div class="options">
+            <div class="option" id="indoor" onclick="selectOption('indoor')">Indoor</div>
+            <div class="option" id="outdoor" onclick="selectOption('outdoor')">Outdoor</div>
+        </div>
+    </div>
+
+    <div class="container" id="question2" style="display: none;">
+        <div class="question">Adult or Family Friendly?</div>
+        <div class="options">
+            <div class="option" id="adult" onclick="selectOption('adult')">Adult Friendly</div>
+            <div class="option" id="family" onclick="selectOption('family')">Family Friendly</div>
+        </div>
+    </div>
+
+    <div class="container" id="activities-list">
+        <h2>Recommended Activities</h2>
+        <ul id="activities">
+            <!-- Activities will be populated dynamically -->
+        </ul>
+    </div>
+
+    <script>
+        let selectedOptions = { indoor: false, outdoor: false, adult: false, family: false };
+
+        function selectOption(option) {
+            if (option === 'indoor' || option === 'outdoor') {
+                selectedOptions.indoor = (option === 'indoor');
+                selectedOptions.outdoor = (option === 'outdoor');
+                updateSelectedOptionsDisplay();
+            } else {
+                selectedOptions.adult = (option === 'adult');
+                selectedOptions.family = (option === 'family');
+                updateSelectedOptionsDisplay();
+            }
+        }
+
+        function updateSelectedOptionsDisplay() {
+            if (selectedOptions.indoor || selectedOptions.outdoor) {
+                document.getElementById('question1').style.display = 'none';
+                document.getElementById('question2').style.display = 'block';
+            }
+
+            if (selectedOptions.adult || selectedOptions.family) {
+                document.getElementById('question2').style.display = 'none';
+                showActivities();
+            }
+        }
+
+        function showActivities() {
+            const activitiesList = document.getElementById('activities-list');
+            activitiesList.style.display = 'block';
+
+            // Clear any previous activities
+            const activitiesUl = document.getElementById('activities');
+            activitiesUl.innerHTML = '';
+
+            // Populate activities based on selections
+            const indoorSelected = selectedOptions.indoor;
+            const familySelected = selectedOptions.family;
+
+            let activities;
+            if (indoorSelected && familySelected) {
+                activities = familyActivities.concat(indoorActivities);
+            } else {
+                activities = [];
+            }
+
+            activities.forEach(activity => {
+                const li = document.createElement('li');
+                li.textContent = activity;
+                activitiesUl.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
