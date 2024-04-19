@@ -129,15 +129,15 @@ courses: { compsci: {week: 1} }
             }
         }
         const imagePaths = [
-            '/home/sumi/vscode/student-2/_posts/torreypinesnaturalreservehike.jpg',
-            '/home/sumi/vscode/student-2/_posts/bikingincoronado.jpg',
-            '/home/sumi/vscode/student-2/_posts/moonlightbeach.jpg',
-            '/home/sumi/vscode/student-2/_posts/surf.jpg',
-            '/home/sumi/vscode/student-2/_posts/standuppaddleboard.jpg',
-            '/home/sumi/vscode/student-2/_posts/cabrillonationalmonument.jpg',
-            '/home/sumi/vscode/student-2/_posts/lajollacove.jpg',
-            '/home/sumi/vscode/student-2/_posts/balboapark.jpg',
-            '/home/sumi/vscode/student-2/_posts/whalewatching.jpg'
+            '/home/sumi/vscode/student-2/images/torreypinesnaturalreservehike.jpg',
+            '/home/sumi/vscode/student-2/images/bikingincoronado.jpg',
+            '/home/sumi/vscode/student-2/images/moonlightbeach.jpg',
+            '/home/sumi/vscode/student-2/images/surf.jpg',
+            '/home/sumi/vscode/student-2/images/standuppaddleboard.jpg',
+            '/home/sumi/vscode/student-2/images/cabrillonationalmonument.jpg',
+            '/home/sumi/vscode/student-2/images/lajollacove.jpg',
+            '/home/sumi/vscode/student-2/images/balboapark.jpg',
+            '/home/sumi/vscode/student-2/images/whalewatching.jpg'
         ];
     </script>
 </body>
