@@ -9,7 +9,10 @@ courses: {compsci: {week: 7}}
 
 Here are some activities in San Diego:
 
-[Family Friendly Activities](familyfriendly.html)<br>
+<a href="familyfriendly.html">
+    <h1>Family Friendly</h1>
+    <img src="../images/sandiegozoo.jpg" alt="San Diego Zoo" height="auto">
+</a> <br>
 
 <a href="adult.html">
     <h1>Adult</h1>
