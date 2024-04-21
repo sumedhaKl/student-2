@@ -42,13 +42,8 @@ courses: { compsci: {week: 1} }
             display: block;
         }
         .symbol-back img {
-            display: none;
             width: 100%; 
             height: 100%;
-        }
-        .question-mark {
-            width: 50px;
-            height: auto; 
         }
         .card.flipped .symbol-front {
             display: none;
@@ -59,10 +54,9 @@ courses: { compsci: {week: 1} }
     </style>
 </head>
 <body>
-    <div id="cards-grid" path="{{site.baseurl}}/images/images/">
+    <div id="cards-grid">
     </div>
     <script>
-        let path = document.getElementById("cards-grid").getAttribute("path");
         document.addEventListener('DOMContentLoaded', async function() {
             try {
                 await initializeMemoryGame(imagePaths.concat(imagePaths));
@@ -80,17 +74,23 @@ courses: { compsci: {week: 1} }
                 const front = document.createElement('span');
                 front.classList.add('symbol-front');
                 const questionMark = document.createElement('img');
-                questionMark.src = path+ 'questionmark.png'; 
+                questionMark.src = '/images/questionmark.png'; // Example local image file
                 questionMark.classList.add('question-mark');
                 front.appendChild(questionMark);
                 const back = document.createElement('span');
                 back.classList.add('symbol-back');
                 const image = document.createElement('img');
-                image.src = path;
+                image.onload = function() {
+                    // Once the image is loaded, set its src attribute
+                    image.src = path;
+                };
                 back.appendChild(image);
                 card.appendChild(front);
                 card.appendChild(back);
                 cardsContainer.appendChild(card);
+                // Create a duplicate card for each image
+                const duplicateCard = card.cloneNode(true);
+                cardsContainer.appendChild(duplicateCard);
             });
             let flippedCards = [];
             cardsContainer.addEventListener('click', function(event) {
@@ -129,15 +129,15 @@ courses: { compsci: {week: 1} }
             }
         }
         const imagePaths = [
-            '/home/sumi/vscode/student-2/images/torreypinesnaturalreservehike.jpg',
-            '/home/sumi/vscode/student-2/images/bikingincoronado.jpg',
-            '/home/sumi/vscode/student-2/images/moonlightbeach.jpg',
-            '/home/sumi/vscode/student-2/images/surf.jpg',
-            '/home/sumi/vscode/student-2/images/standuppaddleboard.jpg',
-            '/home/sumi/vscode/student-2/images/cabrillonationalmonument.jpg',
-            '/home/sumi/vscode/student-2/images/lajollacove.jpg',
-            '/home/sumi/vscode/student-2/images/balboapark.jpg',
-            '/home/sumi/vscode/student-2/images/whalewatching.jpg'
+            '/images/torreypinesnaturalreservehike.jpg',
+            '/images/bikingincoronado.jpg',
+            '/images/moonlightbeach.jpg',
+            '/images/surf.jpg',
+            '/images/standuppaddleboard.jpg',
+            '/images/cabrillonationalmonument.jpg',
+            '/images/lajollacove.jpg',
+            '/images/balboapark.jpg',
+            '/images/whalewatching.jpg'
         ];
     </script>
 </body>
