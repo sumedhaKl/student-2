@@ -12,11 +12,10 @@ const products = {
     household: [
         { name: "Soap", price: 5 },
         { name: "Towel", price: 8 },
-        { name: "Dishwasher", price: 500 }
+        { name: "Dishwasher", price: 50 }
     ]
 };
 
-let selectedCategory = null;
 let selectedProducts = [];
 
 function showProducts() {
@@ -39,8 +38,7 @@ function showProducts() {
 
 function toggleProduct(checkbox, price) {
     const productName = checkbox.value;
-    const product = products[selectedCategory].find(item => item.name === productName);
-    if (checkbox.checked) {
+     if (checkbox.checked) {
         selectedProducts.push({ name: productName, price: price });
     } else {
         selectedProducts = selectedProducts.filter(item => item.name !== productName);
@@ -59,17 +57,12 @@ function placeOrder() {
     const pastOrdersList = document.getElementById("pastOrdersList");
     let totalCost = 0;
 
-    Object.values(products).forEach(category => {
-        category.forEach(product => {
-            if (selectedProducts.some(selectedProduct => selectedProduct.name === product.name)) {
-                totalCost += product.price;
-                
-                const newOrder = {id: pastOrdersList.childElementCount + 1, date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing"};
-                const listItem = document.createElement("li");
-                listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;    
-                pastOrdersList.appendChild(listItem);
-            }
-        });
+    selectedProducts.forEach(product => {
+        totalCost += product.price;
+        const newOrder = {date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing"};
+        const listItem = document.createElement("li");
+        listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;
+        pastOrdersList.appendChild(listItem);
     });
 
     const totalElement = document.createElement("p");
