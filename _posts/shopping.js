@@ -48,7 +48,7 @@ function toggleProduct(checkbox, price) {
 }
 
 function placeOrder() {
-    if (!selectedCategory || selectedProducts.length === 0) {
+    if (selectedProducts.length === 0) {
         alert("Please select a category and at least one product before placing an order.");
         return;
     }
@@ -58,12 +58,18 @@ function placeOrder() {
 
     const pastOrdersList = document.getElementById("pastOrdersList");
     let totalCost = 0;
-    selectedProducts.forEach(product => {
-        const newOrder = { id: pastOrdersList.childElementCount + 1, date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing" };
-        const listItem = document.createElement("li");
-        listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;
-        pastOrdersList.appendChild(listItem);
-        totalCost += product.price;
+
+    Object.values(products).forEach(category => {
+        category.forEach(product => {
+            if (selectedProducts.some(selectedProduct => selectedProduct.name === product.name)) {
+                totalCost += product.price;
+                
+                const newOrder = {id: pastOrdersList.childElementCount + 1, date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing"};
+                const listItem = document.createElement("li");
+                listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;    
+                pastOrdersList.appendChild(listItem);
+            }
+        });
     });
 
     const totalElement = document.createElement("p");
