@@ -38,12 +38,24 @@ if (productList){
 
 function toggleProduct(checkbox,price){
 const productName = checkbox.value;
-if (checkbox.checked){
-    selectedProducts.push ({name:productName, price: price});
-} else{
-    selectedProducts=selectedProducts.filter(item => item.name !==productName)
-}
+    if (checkbox.checked){
+        selectedProducts.push ({name:productName, price: price});
+    } else{
+        selectedProducts=selectedProducts.filter(item => item.name !==productName)
+    }
 }
 
+function placeOrder(){
+    if (selectedProducts.length==0) {
+        alert("Please select a category and a product before placing order.")
+        return;
+    }
 
+    const orderStatusElement = document.getElementById("order Status");
+    orderStatusElement.textContent "Order placed. Estimated delivery:3 days.";
+
+    const pastOrdersList = document.getElementById("pastOrderList");
+    
+
+}
 
