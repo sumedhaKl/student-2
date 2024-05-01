@@ -41,6 +41,7 @@ function toggleProduct(checkbox, price) {
      if (checkbox.checked) {
         selectedProducts.push({ name: productName, price: price });
     } else {
+    // This part of the code was generated using ChatGPT
         selectedProducts = selectedProducts.filter(item => item.name !== productName);
     }
 }
@@ -59,6 +60,7 @@ function placeOrder() {
 
     selectedProducts.forEach(product => {
         totalCost += product.price;
+        // This part of the code was generated using ChatGPT
         const newOrder = {date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing"};
         const listItem = document.createElement("li");
         listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;
@@ -69,6 +71,7 @@ function placeOrder() {
     totalElement.textContent = `Total: $${totalCost}`;
     pastOrdersList.appendChild(totalElement);
 
+    // This part of the code was generated using ChatGPT
     localStorage.setItem("pastOrders", JSON.stringify(Array.from(pastOrdersList.children).map(item => item.textContent)));
 
     selectedProducts = [];
@@ -80,6 +83,7 @@ function resetOrders() {
 
 function displayPastOrders() {
     const pastOrdersList = document.getElementById("pastOrdersList");
+    // This part of the code was generated using ChatGPT
     const storedOrders = JSON.parse(localStorage.getItem("pastOrders"));
 
     if (storedOrders) {
