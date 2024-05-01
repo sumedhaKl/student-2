@@ -25,12 +25,16 @@ const productListDiv=document.getElementById(productListDiv);
 selectedProducts=productSelect.value;
 }
 
-productList.array.forEach(element => {
-    <input type="checkboxes" id="category" value="${product name}" ></input> 
+if (productList){
+    let html = "<h2>Available Products:</h2><ul>";
+    productList.array.forEach(element => { 
+     `<li><input type="checkboxes" id="category" value="${product.name}"onchange="toggleProduct(this, ${product.price})">${product.name} - $${product.price}</li>`;
+    });  
     html += "</ul";
     productListDiv.innerHTML=html;
-
-});
+} else {
+    productListDiv.innerHTML=<p>No products available for this category.</p>
+}
 
 function toggleProduct(checkbox,price){
 const productName = checkbox.value;
