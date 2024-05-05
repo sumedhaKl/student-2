@@ -19,7 +19,7 @@ Here are some activities in San Diego:
         </select><br><br>
 </form>
 
-<a href="familyfriendly.html">
+<a href="CPT-project/_posts/familyfriendly.html.htm">
     <h1>Family Friendly</h1>
     <img src="../images/sandiegozoo.jpg" alt="San Diego Zoo" height="auto">
 </a> <br>
