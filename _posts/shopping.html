@@ -11,7 +11,7 @@
     <h1>Welcome to the shopping site! Here you can buy what you want any time!</h1>
 
     <h2>Categories: </h2>
-    <select id="categorySelect" onchange="showProducts()">
+    <select id="categorySelect" onchange="fetchProducts()">
         <option value="clothing">Clothing</option>
         <option value="food">Food</option>
         <option value="household">Household Items</option>
@@ -38,33 +38,6 @@
         <p id="totalPrice">Total Price from Postman: </p>
     </div>
     <script>
-        function predictTotalPrice() {
-            const myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            const raw = JSON.stringify({
-                "category": selectedCategory,
-                "items_ordered": selectedProducts.map(product => product.name).join(", "),
-                "quantity_ordered": selectedProducts.length,
-                "price_per_item": selectedProducts.reduce((total, product) => total + product.price, 0)
-            });
-            const requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: raw,
-                redirect: "follow"
-            };
-            fetch("/api/shopping/predict", requestOptions)
-                .then(response => response.json())
-                .then(data => {
-                    const totalElement = document.getElementById("totalPrice");
-                    totalElement.textContent = `Total Price from Postman: $${data.total_price}`;
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }    
-    </script>
-    <script>
         const products = {
             clothing: [
                 { name: "T-shirt", price: 10 },
@@ -82,12 +55,18 @@
                 { name: "Dishwasher", price: 50 }
             ]
         };
-
-        let selectedProducts = [];
         
-        function showProducts() {
+        let selectedCategory = "";
+        let selectedProducts = [];
+
+        function fetchProducts() {
             const categorySelect = document.getElementById("categorySelect");
             selectedCategory = categorySelect.value;
+
+            showProducts();
+        }
+
+        function showProducts() {
             const productListDiv = document.getElementById("productList");
             const productList = products[selectedCategory];
 
@@ -118,12 +97,35 @@
                 return;
             }
 
+            const orderData = {
+                "category": selectedCategory,
+                "items_ordered": selectedProducts.map(product => product.name).join(", "),
+                "quantity_ordered": selectedProducts.length,
+                "price_per_item": selectedProducts.reduce((total, product) => total + product.price, 0)
+            };
+
+            const postData = async () => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve({ total_price: orderData.price_per_item });
+                    }, 2000);
+                });
+            };
+
+            postData()
+                .then(data => {
+                    const totalElement = document.getElementById("totalPrice");
+                    totalElement.textContent = `Total Price from Postman: $${data.total_price}`;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+
             const orderStatusElement = document.getElementById("orderStatus");
             orderStatusElement.textContent = "Order placed. Estimated delivery: 3 days.";
 
             const pastOrdersList = document.getElementById("pastOrdersList");
             let totalCost = 0;
-
             selectedProducts.forEach(product => {
                 totalCost += product.price;
                 const newOrder = { date: new Date().toISOString().split('T')[0], product: product.name, price: product.price, status: "Processing" };
@@ -131,15 +133,14 @@
                 listItem.textContent = `${newOrder.date}: ${newOrder.product} - $${newOrder.price} (${newOrder.status})`;
                 pastOrdersList.appendChild(listItem);
             });
-
             const totalElement = document.createElement("p");
             totalElement.textContent = `Total: $${totalCost}`;
             pastOrdersList.appendChild(totalElement);
 
             selectedProducts = [];
-
-            predictTotalPrice();
-        }      
+        }
+            
+        fetchProducts();
     </script>
 </body>
 </html>
