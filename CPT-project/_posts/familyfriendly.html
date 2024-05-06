@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Friendly Activities</title>
+</head>
+<body>
+    <h1>Here are some family friendly activities in San Diego:</h1>
+    <ul>
+        <li>The San Diego Zoo</li>
+        <li>San Diego Safari Park</li>
+        <li>Seaworld</li>
+        <li>Belmont park</li>
+        <li>Legoland</li>
+        <li>Carlsbad Flower Fields</li>
+        <li>Coronado Bridge</li>
+        <li>Mission Beach</li>
+        <li>Old Town</li>
+    </ul> 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const activityLinks = document.querySelectorAll("a");
+    
+            function openActivityPage(event) {
+                event.preventDefault();
+                const url =  this.getAttribute("href");
+                const baseUrl = window.location.origin;
+                const absoluteUrl = `${baseUrl}/${url}`;
+                window.location.href=absoluteUrl;
+            }
+    
+            activityLinks.forEach(link => {
+                link.addEventListener("click", openActivityPage);
+                const image = link.querySelector("img");
+                if (image) {
+                    image.addEventListener("click", openActivityPage)
+                }
+            });
+        });
+    </script>   
+</body>
+</html>
