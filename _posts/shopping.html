@@ -64,6 +64,9 @@
             selectedCategory = categorySelect.value;
 
             showProducts();
+
+            const productListDiv = document.getElementById("productList");
+            productListDiv.innerHTML += "<p>Products fetched successfully!</p>";
         }
 
         function showProducts() {
@@ -104,6 +107,16 @@
                 "price_per_item": selectedProducts.reduce((total, product) => total + product.price, 0)
             };
 
+            const raw = JSON.stringify(orderData);
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            const requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
+                redirect: "follow"
+            };
+
             const postData = async () => {
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {
@@ -116,13 +129,14 @@
                 .then(data => {
                     const totalElement = document.getElementById("totalPrice");
                     totalElement.textContent = `Total Price from Postman: $${data.total_price}`;
+                    const orderStatusElement = document.getElementById("orderStatus");
+                    orderStatusElement.textContent = "Order placed successfully. Estimated delivery: 3 days.";
                 })
                 .catch(error => {
                     console.error('Error:', error);
+                    const orderStatusElement = document.getElementById("orderStatus");
+                    orderStatusElement.textContent = "Failed to place order. Please try again later.";
                 });
-
-            const orderStatusElement = document.getElementById("orderStatus");
-            orderStatusElement.textContent = "Order placed. Estimated delivery: 3 days.";
 
             const pastOrdersList = document.getElementById("pastOrdersList");
             let totalCost = 0;
